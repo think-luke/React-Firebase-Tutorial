@@ -19,3 +19,12 @@ Alright, now that you're at the website, create an account if you haven't or log
 This is what the Firebase dashboard looks like:
 
 <img src="./images/1.png" alt="Firebase dashboard."/>
+
+Begin by clicking the "Add Project" card under Your Firebase Projects.
+You will see the following page and you can enter a name for your project:
+
+<img src="./images/2.png" alt="Firebase create project form."/>
+
+Once you click continue, step 2 is confirming your Google Analytics selection. We are going to disable this to quickly move forward. However, please investigate Google Analytics depending on your project requirements. Here is a link to [Google Analytics](https://analytics.google.com/analytics/web/provision/#/provision).
+
+<img src="./images/3.png" alt="Firebase Google Analytics choice."/>
