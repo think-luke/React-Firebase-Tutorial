@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import styles from './App.module.css';
 
 function App() {
+  const [text, setText] = useState("");
+
+  const handleText = (e) => {
+    e.preventDefault();
+    setText(e.target.value);
+    return
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <h1 className={styles.header}>Firebase tutorial form:</h1>
+      <form 
+        className={styles.form}
+        onSubmit={handleSubmit}
+      >
+        <label 
+          htmlFor="example"
+          className={styles.label}
+        />
+        <input 
+          type="text" 
+          name="example"
+          className={styles.input}
+          onChange={handleText}
+          required 
+        />
+        <button type="submit" className={styles.button}>
+          Submit
+        </button>
+      </form>
     </div>
   );
 }
