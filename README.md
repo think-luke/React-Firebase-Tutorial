@@ -27,4 +27,20 @@ You will see the following page and you can enter a name for your project:
 
 Once you click continue, step 2 is confirming your Google Analytics selection. We are going to disable this to quickly move forward. However, please investigate Google Analytics depending on your project requirements. Here is a link to [Google Analytics](https://analytics.google.com/analytics/web/provision/#/provision).
 
-<img src="./images/3.png" alt="Firebase Google Analytics choice."/>
+<img src="./images/3.png" alt="Firebase Google Analytics selection form."/>
+
+It will take a little bit for the project to get initialized. Now's a good time to check your coffee or tea!
+
+<img src="./images/4.png" alt="Firebase Project loading page."/>
+
+If you got coffee or tea, yay! If you got water, also yay!
+Ok once your project gets initialized, you will land on this page.
+
+<img src="./images/5.png" alt="Firebase single project dashboard."/>
+
+There are so many forms and steps involved, but we are almost done!
+The next thing you need to do is click on the web app ```</>``` button under the "Get started by adding Firebase to your app" header.
+
+The following short form will appear - you just need to give your app a nickname and leave the Firebase Hosting box unchecked for now. If you need Firebase Hosting, check out [this link](https://firebase.google.com/products/hosting?gclid=CjwKCAjws--ZBhAXEiwAv-RNLy56zPOphuzMTXKtA3V11PFk3EwZ8uA2x19qUDrp2rgkbxws2pGWGBoCpe8QAvD_BwE&gclsrc=aw.ds). This is the final form you need to fill out:
+
+<img src="./images/6.png" alt="Firebase register application."/>
