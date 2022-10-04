@@ -101,17 +101,41 @@ const firebaseConfig = {
 }
 ```
 
+### Make sure your .env file is good and the firebase.js file looks like this:
+<img src="./images/8.png" alt="Firebase.js example file in VSCode."/>
+
+## Fantastic! Now Firebase and your React app are connected. Let's move on!
+
+---
+
+# Add Firestore to your Firebase project.
+Since this walkthrough covers Firestore, we need to initialize it within our current Firebase project.
+
+## Go to your Firebase project dashboard.
+You will most likely see <u><i>Cloud Firestore</i></u> on this page as a suggested product. If you don't for some reason, click on the menu on the left navbar and select "Firestore Database". They're the same thing.
+
+<img src="./images/9.png" alt="Firestore card in the dashboard."/>
+<img src="./images/10.png" alt="Firebase tab in the left navbar."/>
+
+---
+
+## Wait for the banner to load.
+Sometime it takes a few seconds for the information within the orange banner to load. Just be patient and you will see the <i>```Create database```</i> button appear.
+
+<img src="./images/11.png" alt="Cloud Firestore dashboard."/>
+
+
+
 ### Great! We have two more extra lines of code to add here:
 #### At the top of the file import ```getFirestore```.
 - import { getFirestore } from "@firebase/firestore";
 #### At the bottom of the file, export ```firestore```.
 - export const firestore = getFirestore(app);
 
-### Make sure your .env file is good and the firebase.js file looks like this:
 
-<img src="./images/8.png" alt="Firebase.js example file in VSCode."/>
 
 
 Perfect, we're doing this thing!
 ---
 
+# Create a new colletion
