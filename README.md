@@ -9,6 +9,8 @@ The root directory is called React-Firebase-Tutorial.
 
 # 1: Set up Firebase
 
+<img src="./images/Firebase-logo.png" alt="Firebase logo."/>
+
 Let's start with the [Firebase website](https://firebase.google.com/).
 
 Put simply, Firebase is a cloud-based application platform. It's competitors are Parse, MongoDB, Heroku, AWS Amplify, etc. 
