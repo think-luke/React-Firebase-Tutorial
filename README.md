@@ -108,11 +108,13 @@ const firebaseConfig = {
 
 ---
 
-# Add Firestore to your Firebase project.
+# 3: Add Firestore to your Firebase project.
 Since this walkthrough covers Firestore, we need to initialize it within our current Firebase project.
 
 ## Go to your Firebase project dashboard.
-You will most likely see <u><i>Cloud Firestore</i></u> on this page as a suggested product. If you don't for some reason, click on the menu on the left navbar and select "Firestore Database". They're the same thing.
+* Please note that Firestore and Cloud Firestore are the same thing.
+
+You will most likely see <u><i>Cloud Firestore</i></u> on this page as a suggested product. If you don't for some reason, click on the menu on the left navbar, open up the "Build" accordion and select "Firestore Database". If you still don't see the darn thing, you can click the "All products" tile icon and you'll see it listed on the new page. 
 
 <img src="./images/9.png" alt="Firestore card in the dashboard."/>
 <img src="./images/10.png" alt="Firebase tab in the left navbar."/>
@@ -124,18 +126,54 @@ Sometime it takes a few seconds for the information within the orange banner to 
 
 <img src="./images/11.png" alt="Cloud Firestore dashboard."/>
 
+---
+## Configuring the database
+If you see a modal pop up, you're on the right track. This two part form will ask you to select production or test mode, as well a geographical server location. We are going to select test mode, which creates a temporary database that will expire in 30 days. This is just for practice.
 
+<img src="./images/12.png" alt="Firestore production and test mode configuration modal."/>
 
-### Great! We have two more extra lines of code to add here:
+---
+Next, you need to select a server location based on the location of your user or userbase. If you know the region with the highest number of requests, select the best fitting Firestore location to reduce latency and increase reliability. Unfortunately, you cannot change the location once you establish a connection, so choose wisely.
+
+<img src="./images/13.png" alt="Firestore server location configuration modal."/>
+
+---
+
+## Loading...
+It will take just a few moments for your Firestore database to get created. Another great opportunity for a quick break here!
+
+<img src="./images/14.png" alt="Firestore loading screen."/>
+
+---
+
+## Ready to go!
+If you're familiar with Postbird, this is basically that but with a cleaner UI. You can manually enter data in a collection here, but we are developers so the next phase will walk you through sending data via a React frontend app.
+
+<img src="./images/15.png" alt="Firestore document collection user interface."/>
+
+---
+
+# 4: Integrating Firestore in React.
+Navigate back to the ```firebase.js``` file in your ```src``` directory. We have two more extra lines of code to add here.
 #### At the top of the file import ```getFirestore```.
 - import { getFirestore } from "@firebase/firestore";
 #### At the bottom of the file, export ```firestore```.
 - export const firestore = getFirestore(app);
 
+## Double check that your file matches this image:
 
+<img src="./images/16.png" alt="VSCode integrating Firestore in the firebase.js file."/>
 
+## Light work - Firebase and Firestore are so fast to set up!
 
-Perfect, we're doing this thing!
 ---
+
+![SpongeBob dancing](https://media.giphy.com/media/3MOTl6120JZHa/giphy.gif)
+## We're almost done folks - let's keep it pushing!
+
+---
+
+# 5: Sending your first POST request
+Sending data to your Firestore database from a React frontend is so simple it is wild. The ```App.js``` file in the ```src``` directory has a one input field that is ready to interact with.
 
 # Create a new colletion
