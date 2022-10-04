@@ -174,6 +174,16 @@ Navigate back to the ```firebase.js``` file in your ```src``` directory. We have
 ---
 
 # 5: Sending your first POST request
-Sending data to your Firestore database from a React frontend is so simple it is wild. The ```App.js``` file in the ```src``` directory has a one input field that is ready to interact with.
+Sending data to your Firestore database from a React frontend is so simple it is wild. If you already have your own form, you are golden. If you just want to set up a quick test, then the ```App.js``` file is ready to go.
+
+Basically, all you have to do is add this imports at the top of the file:
+- Fix the import if you have your form nested in a subdirectory within the ```src``` folder.
+- ```import { firestore } from "./firebase";```
+- ```import { addDoc, collection } from "@firebase/firestore";```
+
+You just initialized firestore in the previous step, so that is a relative import. The ```addDoc``` and ```collection``` built-in functions are what we will be employing to define the document collection name and send an HTTP POST request to Firestore.
+
+
+
 
 # Create a new colletion
