@@ -25,7 +25,7 @@ function App() {
           value="read"  
           onClick={switchFeature}    
         >
-            View Messages
+            View messages
         </button>
         <button 
           type="button" 
