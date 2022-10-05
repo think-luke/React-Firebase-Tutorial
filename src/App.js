@@ -9,15 +9,34 @@ import Read from './Read';
 function App() {
   const [feature, setFeature] = useState('read');
 
-  const switchFeature = (featureName) => {
-    return setFeature(featureName);
+  const switchFeature = (e) => {
+    e.preventDefault();
+    return setFeature(e.target.value);
   }
 
   return (
     <div className={styles.app}>
-      <h1 className={styles.header}>Firebase/Firestore tutorial:</h1>
-      {feature === 'create' && <Create switchFeature={switchFeature}/>}
-      {feature === 'read' && <Read switchFeature={switchFeature}/>}
+      <div className={styles.content}>
+        <h1 className={styles.header}>
+          Firebase/Firestore tutorial:
+        </h1>
+        <button 
+          type="button" 
+          value="read"  
+          onClick={switchFeature}    
+        >
+            View Messages
+        </button>
+        <button 
+          type="button" 
+          value="create"  
+          onClick={switchFeature}
+        >
+          Create new message
+        </button>
+      </div>
+      {feature === 'create' && <Create/>}
+      {feature === 'read' && <Read/>}
     </div>
   );
 }

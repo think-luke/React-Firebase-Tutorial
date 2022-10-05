@@ -8,7 +8,7 @@ import styles from './Read.module.css';
 import { firestore } from "../firebase";
 import { query, getDocs, where, collection } from '@firebase/firestore';
 
-export default function Read({ switchFeature }) {
+export default function Read() {
     const [loaded, setLoaded] = useState(false);
     const [retrievedData, setRetrievedData] = useState("");
     const demoReference = collection(firestore, "demo_collection")

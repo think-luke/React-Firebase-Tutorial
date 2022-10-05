@@ -11,6 +11,15 @@
     background: white;
 }
 
+.docIconBox {
+    width: 50px;
+    height: 80px;
+    padding-top: 20px;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+}
+
 .icons {
     width: 25px;
     height: 25px;
@@ -27,7 +36,16 @@
     flex-direction: column;
 }
 
-.infoRow {
+.infoRow1 {
+    width: 350px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.infoRow2 {
     width: 350px;
     height: 50px;
     display: flex;
@@ -37,21 +55,26 @@
 }
 
 .p1 {
+    padding: 0px;
     font-size: 18px;
     font-weight: bold;
+    margin: 0px;
     margin-right: 10px;
 }
 
 .p2 {
+    padding: 0px;
+    margin: 0px;
     font-size: 18px;
 }
 
 .actionBox {
     width: 80px;
     height: 80px;
-    padding: 10px;
+    padding: 10px 10px 0px 0px;
     display: flex;
     flex-direction: row;
     align-items: top;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 5px;
 }

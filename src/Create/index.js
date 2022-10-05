@@ -7,7 +7,7 @@ import styles from './Create.module.css';
 import { firestore } from "../firebase";
 import { addDoc, collection } from "@firebase/firestore";
 
-export default function Create({ switchFeature }) {
+export default function Create() {
     //Form input state variable
     const [text, setText] = useState("");
 
@@ -47,8 +47,7 @@ export default function Create({ switchFeature }) {
         try {
         //Imported function for creating a collection
         addDoc(ref, testData);
-        console.log("You successfully completed your first POST request to your Firestore database.");
-        return switchFeature('read');
+        return console.log("You successfully completed your first POST request to your Firestore database.");
         } catch(err) {
         return console.log(err)
         }
