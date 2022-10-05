@@ -45,7 +45,7 @@ export default function Read({ switchFeature }) {
         return (
             <>
                 {retrievedData.map(event => (
-                    <DemoCard key={event.text} event={event} />
+                    <DemoCard key={event.id} event={event} />
                 ))}
             </>
         )

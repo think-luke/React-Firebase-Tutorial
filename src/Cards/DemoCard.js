@@ -4,12 +4,11 @@ import { useEffect } from "react";
 import styles from "./DemoCard.module.css";
 //Icons
 import docIcon from "../icons/document.png";
-import profileIcon from "../icons/profile.png";
-import calendarIcon from "../icons/calendar.png";
 import editIcon from "../icons/edit.svg";
 import deleteIcon from "../icons/delete.png";
 
 export default function DemoCard({ event }) {
+    console.log(event)
     return (
         <div className={styles.card}>
             <img 
@@ -19,28 +18,15 @@ export default function DemoCard({ event }) {
             />
             <section className={styles.infoColumn}>
                 <div className={styles.infoRow}>
-                    <img 
-                        src={profileIcon}
-                        alt="Profile icon." 
-                        className={styles.icons}
-                    />
-                    <h4>Username</h4>
+                    <p className={styles.p1}>Document ID:</p>
+                    <p className={styles.p2}>{event.id}</p>
                 </div>
                 <div className={styles.infoRow}>
-                    <h3>Stored message:</h3>
-                    <h4>{event.text}</h4>
-                </div>
-                <div className={styles.infoRow}>
-                    <img 
-                        src={calendarIcon} 
-                        alt="Calendar icon." 
-                        className={styles.icons}
-                    />
-                    <h4>Date</h4>
+                    <p className={styles.p1}>Stored message:</p>
+                    <p className={styles.p2}>{event.data.text}</p>
                 </div>
             </section>
             <div className={styles.actionBox}>
-                Edit your data:
                 <img 
                     src={editIcon}
                     alt="Edit icon." 
