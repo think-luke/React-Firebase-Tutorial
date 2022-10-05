@@ -4,9 +4,9 @@
 <br>
 
 ## There are several ways to structure your Firestore data.
-- Documents
+- Single Collection
 - Multiple Collections
-- Subcollections within documents
+- Subcollections
 
 ---
 
@@ -20,10 +20,10 @@
 
 <br>
 
-## Documents:
+## Single Collection:
 <img src="./images/firestore_document.png" alt="Firestore document iluustration.">
 
-A document is essentailly a parent database table that may or may not have children. In a standalone Firestore document, you can nest objects like arrays or maps. 
+A collection is essentailly a parent database table that may or may not have child folders. In a Firestore collection, you can create documents with nested objects like arrays or maps. 
 
 <br>
 
