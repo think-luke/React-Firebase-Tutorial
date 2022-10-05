@@ -1,5 +1,5 @@
 # Choosing a Firestore data structure
-<img src="./images/data_structures.png" alt="Data structures illustration.">
+<img src="./images/data_structures.png" alt="Data structures illustration." width="500px">
 
 <br>
 

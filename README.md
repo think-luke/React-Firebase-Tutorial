@@ -1,5 +1,5 @@
 # Getting Started with Firebase, Firestore and React
-<img src="./images/Firebase-React.png" alt="Firebase and React logos."/>
+<img src="./images/Firebase-React.png" alt="Firebase and React logos." width="500px"/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,7 +9,7 @@ The root directory is called React-Firebase-Tutorial.
 
 # 1: Set up Firebase
 
-<img src="./images/Firebase-logo.png" alt="Firebase logo."/>
+<img src="./images/Firebase-logo.png" alt="Firebase logo." width="500px"/>
 
 Let's start with the [Firebase website](https://firebase.google.com/).
 
@@ -33,26 +33,26 @@ Alright, now that you're at the website, create an account if you haven't or log
 
 This is what the Firebase dashboard looks like:
 
-<img src="./images/1.png" alt="Firebase dashboard."/>
+<img src="./images/1.png" alt="Firebase dashboard." width="500px"/>
 
 <br>
 
 Begin by clicking the "Add Project" card under Your Firebase Projects.
 You will see the following page and you can enter a name for your project:
 
-<img src="./images/2.png" alt="Firebase create project form."/>
+<img src="./images/2.png" alt="Firebase create project form." width="500px"/>
 
 <br>
 
 Once you click continue, step 2 is confirming your Google Analytics selection. We are going to disable this to quickly move forward. However, please look into Google Analytics depending on your project requirements. Here is a link to [Google Analytics](https://analytics.google.com/analytics/web/provision/#/provision).
 
-<img src="./images/3.png" alt="Firebase Google Analytics selection form."/>
+<img src="./images/3.png" alt="Firebase Google Analytics selection form." width="500px"/>
 
 <br>
 
 It will take a little bit for the project to get initialized. Now's a good time to fill up on coffee, tea, whatever makes you happy!
 
-<img src="./images/4.png" alt="Firebase Project loading page."/>
+<img src="./images/4.png" alt="Firebase Project loading page." width="500px"/>
 
 <br>
 
@@ -60,7 +60,7 @@ It will take a little bit for the project to get initialized. Now's a good time 
 ## Project dashboard
 Ok! Once your project is created, you will land on this page.
 
-<img src="./images/5.png" alt="Firebase single project dashboard."/>
+<img src="./images/5.png" alt="Firebase single project dashboard." width="500px"/>
 
 <br>
 
@@ -69,13 +69,13 @@ The next thing you need to do is click on the web app ```</>``` button under the
 
 The following short form will appear - you just need to give your app a nickname and leave the Firebase Hosting box unchecked for now. If you need Firebase Hosting, check out [this link](https://firebase.google.com/products/hosting?gclid=CjwKCAjws--ZBhAXEiwAv-RNLy56zPOphuzMTXKtA3V11PFk3EwZ8uA2x19qUDrp2rgkbxws2pGWGBoCpe8QAvD_BwE&gclsrc=aw.ds).
 
-<img src="./images/6.png" alt="Firebase register application."/>
+<img src="./images/6.png" alt="Firebase register application." width="500px"/>
 
 <br>
 
 Now you will see a page with two blocks of code to copy. The first is the Firebase npm package. The second one has all of your keys and credentials for this Firebase project. This image is edited for security reasons, but you will see all of your credentials in green wrapped in double quotes. You will want to keep them secure in a .env file.
 
-<img src="./images/7.png" alt="Firebase npm and credentials page."/>
+<img src="./images/7.png" alt="Firebase npm and credentials page." width="500px"/>
 
 <br>
 

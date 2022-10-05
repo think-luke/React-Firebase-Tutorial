@@ -1,5 +1,5 @@
 # Welcome to Part 2: CRUD features!
-<img src="./images/CRUD.png" alt="Icons representing CRUD features."/>
+<img src="./images/CRUD.png" alt="Icons representing CRUD features." width="700px"/>
 
 ---
 
@@ -77,7 +77,7 @@ And last but not least, you will see your document data!
 
 <br>
 
-<img src="./images/17.png" alt="New Firestore database entry."/>
+<img src="./images/17.png" alt="New Firestore database entry." width="700px"/>
 
 <br>
 
