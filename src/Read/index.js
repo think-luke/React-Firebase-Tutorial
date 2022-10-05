@@ -1,55 +1,53 @@
 //React
 import { useState, useEffect } from 'react';
+//Components
+import DemoCard from "../Cards/DemoCard";
 //Styling
 import styles from './Read.module.css';
 //Firestore
 import { firestore } from "../firebase";
-import { doc, getDoc, collection } from '@firebase/firestore';
+import { query, getDocs, where, collection } from '@firebase/firestore';
 
 export default function Read({ switchFeature }) {
-    const docReference = doc(firestore, "demo_collection")
+    const [loaded, setLoaded] = useState(false);
+    const [retrievedData, setRetrievedData] = useState("");
+    const demoReference = collection(firestore, "demo_collection")
 
     useEffect(() => {
-
+        const fetchData = async() => {
+            //Going to set state to an array of objects
+            const dataArr = [];
+            //Simple query object
+            const q = query(collection(firestore, "demo_collection"), where("demo", "==", true));
+            //Retrieve results with query object
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach(doc => {
+                console.log(doc.id, " => ", doc.data());
+                const obj = {id: doc.id, data: doc.data()}
+                dataArr.push(obj)
+            }) 
+            //Set the state to the retrieved data
+            setRetrievedData(dataArr);   
+        }
+        fetchData()
+        .catch(console.error)
     },[])
 
-    return (
-        <div className={styles.card}>
-            <img 
-                src='../../icons/document.png' 
-                alt="Document icon." 
-                className={styles.icons}
-            />
-            <section className={styles.infoColumn}>
-                <div className={styles.infoRow}>
-                    <img 
-                        src='../../icons/profile.png' 
-                        alt="Profile icon." 
-                        className={styles.icons}
-                    />
-                    <h4>Username</h4>
-                </div>
-                <div className={styles.infoRow}>
-                    <h3>Stored message:</h3>
-                    <h4>Message</h4>
-                </div>
-                <div className={styles.infoRow}>
-                    <img 
-                        src='../../icons/calendar.png' 
-                        alt="Calendar icon." 
-                        className={styles.icons}
-                    />
-                    <h4>Date</h4>
-                </div>
-            </section>
-            <div className={styles.editBox}>
-                Edit your data:
-                <img 
-                    src='../../icons/edit.svg' 
-                    alt="Edit icon." 
-                    className={styles.profileImage}
-                />
-            </div>
-        </div>
-    )
+    useEffect(() => {
+        retrievedData.length ? setLoaded(true) : setLoaded(false);
+    },[retrievedData])
+
+    if(!loaded) {
+        return (
+            <div>No data to show...</div>  
+        )
+    } else {
+        return (
+            <>
+                {retrievedData.map(event => (
+                    <DemoCard key={event.text} event={event} />
+                ))}
+            </>
+        )
+    } 
 }

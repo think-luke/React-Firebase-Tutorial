@@ -40,7 +40,8 @@ export default function Create({ switchFeature }) {
         */
 
         let testData = {
-        text
+            text,
+            demo: true
         }
         //Wrap this in a try catch block
         try {

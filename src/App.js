@@ -7,7 +7,7 @@ import Create from './Create';
 import Read from './Read';
 
 function App() {
-  const [feature, setFeature] = useState('create');
+  const [feature, setFeature] = useState('read');
 
   const switchFeature = (featureName) => {
     return setFeature(featureName);
@@ -18,8 +18,6 @@ function App() {
       <h1 className={styles.header}>Firebase/Firestore tutorial:</h1>
       {feature === 'create' && <Create switchFeature={switchFeature}/>}
       {feature === 'read' && <Read switchFeature={switchFeature}/>}
-      {feature === 'update' && <Update switchFeature={switchFeature}/>}
-      {feature === 'destroy' && <Destroy switchFeature={switchFeature}/>}
     </div>
   );
 }
