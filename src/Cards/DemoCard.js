@@ -21,6 +21,12 @@ export default function DemoCard({ event }) {
         return console.log("You successfully deleted a single document from Firestore.")
     }
 
+    const handleEdit = (e) => {
+        e.preventDefault();
+        setEditModal(!editModal);
+        return
+    }
+
     return (
         <div className={styles.card}>
             <div className={styles.docIconBox}>
@@ -41,21 +47,18 @@ export default function DemoCard({ event }) {
                 </div>
             </section>
             <div className={styles.actionBox}>
-                <div>
-                    <img 
-                        src={editIcon}
-                        alt="Edit icon." 
-                        className={styles.icons}
-                    />
-                </div>
-                <div onClick={handleDelete}>
-                    <img 
-                        src={deleteIcon}
-                        alt="Delete icon." 
-                        
-                        className={styles.icons}
-                    />
-                </div>
+                <img 
+                    src={editIcon}
+                    alt="Edit icon." 
+                    className={styles.icons}
+                    onClick={handleEdit}
+                />
+                <img 
+                    src={deleteIcon}
+                    alt="Delete icon." 
+                    onClick={handleDelete}
+                    className={styles.icons}
+                />
             </div>
             {editModal && <Update event={event}/>}
         </div>
