@@ -290,5 +290,4 @@ Navigate back to the ```firebase.js``` file in your ```src``` directory. We have
 ---
 
 ## Alright folks, that wraps up the set up phase!
-<br>
 Move on to Part 2: CRUD features :)

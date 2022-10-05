@@ -1,5 +1,5 @@
 # Choosing a Firestore data structure
-<img src="./images/data_structures.png" alt="Data structures illustration." width="500px">
+<img src="./images/data_structures.png" alt="Data structures illustration." width="700px" />
 
 <br>
 
@@ -20,8 +20,8 @@
 
 <br>
 
-## Single Collection:
-<img src="./images/firestore_document.png" alt="Firestore document iluustration.">
+# Single Collection:
+<img src="./images/firestore_document.png" alt="Firestore document iluustration." width="700px" />
 
 A collection is essentailly a parent database table that may or may not have child folders. In a Firestore collection, you can create documents with nested objects like arrays or maps. 
 
@@ -34,7 +34,7 @@ A collection is essentailly a parent database table that may or may not have chi
 <br>
 
 ### The drawer can be organized with labeled folders.
-<img src="./images/organized_cabinet.png" alt="Organized cabinet illustration.">
+<img src="./images/organized_cabinet.png" alt="Organized cabinet illustration." width="700px" />
 
 <br>
 
@@ -43,7 +43,7 @@ A collection is essentailly a parent database table that may or may not have chi
 <br>
 
 ### Or... The drawer can be disorganized with random sheets of paper:
-<img src="./images/disorganized_cabinet.png" alt="Disorganized cabinet illustration.">
+<img src="./images/disorganized_cabinet.png" alt="Disorganized cabinet illustration." width="700px" />
 
 ---
 
@@ -80,29 +80,29 @@ If you have fixed, static data that won't change over time, this is a great appr
 For example:
 - Basic user info.
 - Archived data for artworks in museums.
-- Discography for music releases on Discogs.
+- Discography for music releases.
 
 <br>
 
-<img src="./images/streamline_data.png" alt="Streamlined efficient data illustration.">
+<img src="./images/streamline_data.png" alt="Streamlined efficient data illustration." width="700px" />
 
 <br>
 
 ## Cons:
 This structure will make it harder to scale when data grows. If you have a large single document, retrieval times will become slower.
 
-<img src="./images/slow_loading.png" alt="Slow data loading illustration.">
+<img src="./images/slow_loading.png" alt="Slow data loading illustration." width="700px" />
 
 <br>
 
 ## Just picture a single file cabinet looking like this...
-<img src="./images/huge_cabinet.png" alt="An illustration of a massive file cabinet.">
+<img src="./images/huge_cabinet.png" alt="An illustration of a massive file cabinet." width="700px" />
 
 ---
 
 <br>
 
-## Subcollections
+# Subcollections
 Subcollections are like child database tables. They are nested within a parent document. If you know ahead of time that data will expand and form relationships, subcollections are a great option.
 
 <br>
@@ -123,8 +123,6 @@ departments
         |            |        └───  last: Wilson
         |            |
         |            └─── dob: 1962   
-        |            |
-        |            └─── createdOn: Unix timestamp   
         |
         └─── employees
                 |
@@ -135,8 +133,6 @@ departments
                         |        └───   last: Smith
                         |
                         └─── dob: 1982
-                        |
-                        └─── createdOn: Unix timestamp
 ```
 
 <br>
@@ -146,7 +142,7 @@ departments
 - You get access to full query capabilities.
 - You also get to execute [collection group queries](https://firebase.google.com/docs/firestore/query-data/queries).
 
-<img src="./images/file_cabinet.png" alt="A photo of organized files.">
+<img src="./images/file_cabinet.png" alt="A photo of organized files." width="700px" />
 
 ## Helpful links:
 [Firestore docs](https://firebase.google.com/docs/firestore/manage-data/structure-data)
