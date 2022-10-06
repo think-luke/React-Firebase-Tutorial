@@ -5,7 +5,8 @@ import styles from './App.module.css';
 //Components
 import Home from './Home';
 import { Login, Logout } from './authentication';
-
+//Image
+import firebaseLogo from "./Firebase_logo.png";
 
 function App() {
     const [sessionUser, setSessionUser] = useState(null);
@@ -56,9 +57,11 @@ function App() {
             </div>
             :
             <div className={styles.loggedOut}>
-                <h1 className={styles.header}>
-                    Firebase tutorial:
+                <h1 className={styles.startHeader}>
+                    Welcome to the Firebase tutorial!
                 </h1>
+                <img src={firebaseLogo} alt="Firebase logo." />
+                <h2 className={styles.startText}>Click the log in button to continue:</h2>
                 <Login loginUser={loginUser}/>
             </div>
             }

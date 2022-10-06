@@ -16,12 +16,13 @@
 }
 
 .loggedOut {
-  width: 500px;
-  height: 100px;
+  width: 80vw;
+  height: calc(100vh - 100px);
+  padding-top: 100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   gap: 15px;
 }
 
@@ -32,6 +33,21 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.startHeader {
+  width: clamp(500px, auto, 80vw);
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 56px;
+}
+
+.startText {
+  width: 700px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .header {
