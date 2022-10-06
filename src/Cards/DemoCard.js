@@ -21,46 +21,48 @@ export default function DemoCard({ event }) {
         return console.log("You successfully deleted a single document from Firestore.")
     }
 
-    const handleEdit = (e) => {
+    const handleEditModal = (e) => {
         e.preventDefault();
         setEditModal(!editModal);
         return
     }
 
     return (
-        <div className={styles.card}>
-            <div className={styles.docIconBox}>
-                <img 
-                    src={docIcon}
-                    alt="Document icon." 
-                    className={styles.icons}
-                />    
-            </div>
-            <section className={styles.infoColumn}>
-                <div className={styles.infoRow1}>
-                    <p className={styles.p1}>Document ID:</p>
-                    <p className={styles.p2}>{event.id}</p>
+        <>
+            <div className={styles.card}>
+                <div className={styles.docIconBox}>
+                    <img 
+                        src={docIcon}
+                        alt="Document icon." 
+                        className={styles.icons}
+                    />    
                 </div>
-                <div className={styles.infoRow2}>
-                    <p className={styles.p1}>Stored message:</p>
-                    <p className={styles.p2}>{event.data.text}</p>
+                <section className={styles.infoColumn}>
+                    <div className={styles.infoRow1}>
+                        <p className={styles.p1}>Document ID:</p>
+                        <p className={styles.p2}>{event.id}</p>
+                    </div>
+                    <div className={styles.infoRow2}>
+                        <p className={styles.p1}>Stored message:</p>
+                        <p className={styles.p2}>{event.data.text}</p>
+                    </div>
+                </section>
+                <div className={styles.actionBox}>
+                    <img 
+                        src={editIcon}
+                        alt="Edit icon." 
+                        className={styles.icons}
+                        onClick={handleEditModal}
+                    />
+                    <img 
+                        src={deleteIcon}
+                        alt="Delete icon." 
+                        onClick={handleDelete}
+                        className={styles.icons}
+                    />
                 </div>
-            </section>
-            <div className={styles.actionBox}>
-                <img 
-                    src={editIcon}
-                    alt="Edit icon." 
-                    className={styles.icons}
-                    onClick={handleEdit}
-                />
-                <img 
-                    src={deleteIcon}
-                    alt="Delete icon." 
-                    onClick={handleDelete}
-                    className={styles.icons}
-                />
             </div>
-            {editModal && <Update event={event}/>}
-        </div>
+            {editModal && <Update event={event} handleEditModal={handleEditModal}/>}
+        </>
     )
 }

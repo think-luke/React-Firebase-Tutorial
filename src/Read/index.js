@@ -12,15 +12,15 @@ export default function Read() {
     const [loaded, setLoaded] = useState(false);
     const [fetching, setFetching] = useState(false);
     const [retrievedData, setRetrievedData] = useState("");
-    const demoReference = collection(firestore, "demo_collection")
+    const demoReference = collection(firestore, "demo_collection");
 
     useEffect(() => {
         const fetchData = async() => {
             setFetching(true);
             //Going to set state to an array of objects
             const dataArr = [];
-            //Simple query object
-            const q = query(collection(firestore, "demo_collection"), where("demo", "==", true));
+            //Simple query object with the demoReference we wrote
+            const q = query(demoReference, where("demo", "==", true));
             //Retrieve results with query object
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach(doc => {

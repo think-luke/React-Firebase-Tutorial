@@ -7,7 +7,7 @@ import styles from './Update.module.css';
 import { firestore } from "../firebase";
 import { doc, updateDoc } from "@firebase/firestore";
 
-export default function Update({ event }) {
+export default function Update({ event, handleEditModal }) {
     //Updated input state variable
     const [newText, setNewText] = useState("");
 
@@ -27,7 +27,9 @@ export default function Update({ event }) {
         await updateDoc(eventRef, {
             text: newText
         });
-        return console.log("You successfully edited a field in your Firestore document.")
+        handleEditModal(e);
+        console.log("You successfully edited a field in your Firestore document.")
+        return
     }
 
     return (
@@ -39,7 +41,9 @@ export default function Update({ event }) {
                 <label 
                     htmlFor="example"
                     className={styles.label}
-                />
+                >
+                    Edit your message here:
+                </label>
                 <input 
                     type="text" 
                     name="example"
@@ -47,12 +51,21 @@ export default function Update({ event }) {
                     onChange={handleText}
                     required 
                 />
-                <button 
-                    type="submit" 
-                    className={styles.button}
-                >
-                    Submit
-                </button>
+                <div className={styles.buttonBox}>
+                    <button 
+                        type="button" 
+                        className={styles.button}
+                        onClick={handleEditModal}
+                    >
+                        Cancel
+                    </button>
+                    <button 
+                        type="submit" 
+                        className={styles.button}
+                    >
+                        Submit
+                    </button>    
+                </div>
             </form>
         </div>
     )
