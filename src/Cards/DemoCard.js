@@ -12,7 +12,7 @@ import docIcon from "../icons/document.png";
 import editIcon from "../icons/edit.svg";
 import deleteIcon from "../icons/delete.png";
 
-export default function DemoCard({ event }) {
+export default function DemoCard({ event, dataUpdated }) {
     const [editModal, setEditModal] = useState(false);
 
     const handleDelete = async(e) => {
@@ -62,7 +62,7 @@ export default function DemoCard({ event }) {
                     />
                 </div>
             </div>
-            {editModal && <Update event={event} handleEditModal={handleEditModal}/>}
+            {editModal && <Update event={event} handleEditModal={handleEditModal} dataUpdated={dataUpdated}/>}
         </>
     )
 }

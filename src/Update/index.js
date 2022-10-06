@@ -7,7 +7,7 @@ import styles from './Update.module.css';
 import { firestore } from "../firebase";
 import { doc, updateDoc } from "@firebase/firestore";
 
-export default function Update({ event, handleEditModal }) {
+export default function Update({ event, handleEditModal, dataUpdated }) {
     //Updated input state variable
     const [newText, setNewText] = useState("");
 
@@ -27,6 +27,7 @@ export default function Update({ event, handleEditModal }) {
         await updateDoc(eventRef, {
             text: newText
         });
+        dataUpdated(e);
         handleEditModal(e);
         console.log("You successfully edited a field in your Firestore document.")
         return

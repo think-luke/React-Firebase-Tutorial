@@ -11,6 +11,7 @@ import { query, getDocs, where, collection } from '@firebase/firestore';
 export default function Read() {
     const [loaded, setLoaded] = useState(false);
     const [fetching, setFetching] = useState(false);
+    const [updated, setUpdated] = useState(false);
     const [retrievedData, setRetrievedData] = useState("");
     const demoReference = collection(firestore, "demo_collection");
 
@@ -34,12 +35,18 @@ export default function Read() {
         }
         fetchData()
         .catch(console.error);
+        setUpdated(false);
         return 
-    },[])
+    },[updated]);
 
     useEffect(() => {
         retrievedData.length ? setLoaded(true) : setLoaded(false);
-    },[retrievedData])
+    },[retrievedData]);
+
+    const dataUpdated = (e) => {
+        e.preventDefault();
+        return setUpdated(true);
+    }
 
     if(fetching) {
         return <div>Loading...</div>
@@ -51,7 +58,7 @@ export default function Read() {
         return (
             <>
                 {retrievedData.map(event => (
-                    <DemoCard key={event.id} event={event} />
+                    <DemoCard key={event.id} event={event} dataUpdated={dataUpdated}/>
                 ))}
             </>
         )
