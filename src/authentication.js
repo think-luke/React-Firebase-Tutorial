@@ -1,5 +1,10 @@
 //Firebase
-import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
+import { 
+    getAuth, 
+    signInWithPopup, 
+    signOut, 
+    GoogleAuthProvider 
+} from "firebase/auth";
 
 /*
 Optional configurations:
@@ -26,11 +31,11 @@ Optional configurations:
     });
 */
 
-const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
 export const Login = ({ loginUser }) => {
-
+    const provider = new GoogleAuthProvider();
+    
     const login = (e) => {
         e.preventDefault();
         signInWithPopup(auth, provider)
