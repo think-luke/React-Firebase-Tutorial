@@ -15,37 +15,18 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.loggedOut {
+.content {
   width: 500px;
   height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 15px;
-}
-
-.loggedIn {
-  width: 635px;
-  height: 100px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  gap: 5px;
 }
 
 .header {
-  width: 300px;
+  width: 500px;
   font-size: 32px;
   font-weight: bold;
-}
-
-.buttonBox {
-  width: 335px;
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
 }

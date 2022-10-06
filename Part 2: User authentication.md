@@ -3,7 +3,7 @@
 
 ## If you write backend code, there are many issues to consider.
 - Middleware, CSRF, hashing credentials, security vulnerabilities
-- Tokens, cookies, session storage, local storage 
+- JWT tokens, cross-site cookies, session storage, local storage 
 - Database architecture
 - Querying methods
 - Data validation

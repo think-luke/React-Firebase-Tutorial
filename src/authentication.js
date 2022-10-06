@@ -29,7 +29,7 @@ Optional configurations:
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
-export const Login = () => {
+export const Login = ({ loginUser }) => {
 
     const login = (e) => {
         e.preventDefault();
@@ -43,7 +43,15 @@ export const Login = () => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
-            // ...
+            // User array for state variable in App.js
+            const userArr =[];
+            // User object
+            const userObj = {
+                name: user.displayName, 
+                id: user.uid
+            };
+            userArr.push(userObj);
+            return loginUser(userArr);
         }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
@@ -52,7 +60,6 @@ export const Login = () => {
             const email = error.customData.email;
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
         });    
     }
 
@@ -65,11 +72,12 @@ export const Login = () => {
     )
 };
 
-export const Logout = () => {
+export const Logout = ({ logoutUser }) => {
     const logOut = (e) => {
         e.preventDefault();
         signOut(auth).then(() => {
-            console.log("Successfully signed out.")
+            console.log("Successfully signed out.");
+            return logoutUser();
         }).catch(error => {
             console.log(`Code: ${error.code}, Message: ${error.message}`)
         })
