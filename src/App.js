@@ -6,6 +6,7 @@ import { query, getDocs, where, collection } from '@firebase/firestore';
 //Styling
 import styles from './App.module.css';
 //Components
+import { Login, Logout } from './authentication';
 import Create from './Create';
 import Read from './Read';
 
