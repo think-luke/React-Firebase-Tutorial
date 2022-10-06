@@ -8,8 +8,6 @@ The root directory is called React-Firebase-Tutorial.
 <br>
 
 # Getting started
-## Overview:
-
 ### Firebase is an easy to use PaaS (Platform as a Service) product backed by Google.
 
 <img src="./images/Firebase_logo.png" alt="Firebase banner picture." width="610px"/>
@@ -58,12 +56,6 @@ However, if you are looking to scale rapidly and expand, Firestore has limitatio
 
 ---
 
-<br>
-
-# If this all sounds good, let's get started!
-
-<br>
-
 # Tutorial guide:
 This is a four part tutorial that will cover the following areas:
 
@@ -84,9 +76,5 @@ This is a four part tutorial that will cover the following areas:
     3. Update (PUT/PATCH) request
     4. Destroy (DELETE) request
 
----
-
-<br>
-
-# Navigate to [Part 1: Setup](./Part%201%3A%20Setup.md) and let's get started!
+# If this all sounds good, let's get started!
 <img src="./images/start.png" alt="Rocket ship launching with laptop background." width="610px"/>
