@@ -21,10 +21,23 @@
 }
 
 .icons {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.actionIcons {
     width: 25px;
     height: 25px;
     object-fit: contain;
     object-position: center;
+    cursor: pointer;
+}
+
+.actionIcons:hover {
+    width: 27px;
+    height: 27px;
 }
 
 .infoColumn {

@@ -18,7 +18,8 @@ export default function DemoCard({ event, dataUpdated }) {
     const handleDelete = async(e) => {
         e.preventDefault();
         await deleteDoc(doc(firestore, "demo_collection", `${event.id}`));
-        return console.log("You successfully deleted a single document from Firestore.")
+        console.log("You successfully deleted a single document from Firestore.")
+        dataUpdated(e);
     }
 
     const handleEditModal = (e) => {
@@ -51,14 +52,14 @@ export default function DemoCard({ event, dataUpdated }) {
                     <img 
                         src={editIcon}
                         alt="Edit icon." 
-                        className={styles.icons}
+                        className={styles.actionIcons}
                         onClick={handleEditModal}
                     />
                     <img 
                         src={deleteIcon}
                         alt="Delete icon." 
                         onClick={handleDelete}
-                        className={styles.icons}
+                        className={styles.actionIcons}
                     />
                 </div>
             </div>

@@ -50,6 +50,7 @@ export default function Update({ event, handleEditModal, dataUpdated }) {
                     name="example"
                     className={styles.input}
                     onChange={handleText}
+                    placeholder={event.data.text}
                     required 
                 />
                 <div className={styles.buttonBox}>
@@ -68,6 +69,15 @@ export default function Update({ event, handleEditModal, dataUpdated }) {
                     </button>    
                 </div>
             </form>
+            <div className={styles.exitButtonBox}>
+                <button 
+                    type="button" 
+                    onClick={handleEditModal}
+                    className={styles.exitButton}
+                >
+                    X
+                </button>
+            </div>
         </div>
     )
 };
