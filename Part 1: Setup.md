@@ -39,7 +39,7 @@ It's really fast, convenient and pretty cool!
 
 This is what the Firebase dashboard looks like:
 
-<img src="./images/1.png" alt="Firebase dashboard." width="700px"/>
+<img src="./images/Firebase_setup/1.png" alt="Firebase dashboard." width="700px"/>
 
 <br>
 
@@ -47,7 +47,7 @@ Begin by clicking the "Add Project" card under Your Firebase Projects.
 <br>
 You will see the following page and you can enter a name for your project:
 
-<img src="./images/2.png" alt="Firebase create project form." width="700px"/>
+<img src="./images/Firebase_setup/2.png" alt="Firebase create project form." width="700px"/>
 
 <br>
 
@@ -59,7 +59,7 @@ However, please look into Google Analytics depending on your project requirement
 <br>
 Here is a link to [Google Analytics](https://analytics.google.com/analytics/web/provision/#/provision).
 
-<img src="./images/3.png" alt="Firebase Google Analytics selection form." width="700px"/>
+<img src="./images/Firebase_setup/3.png" alt="Firebase Google Analytics selection form." width="700px"/>
 
 <br>
 
@@ -67,7 +67,7 @@ It will take a little bit for the project to get initialized.
 <br>
 Now's a good time to fill up on coffee, tea, whatever makes you happy!
 
-<img src="./images/4.png" alt="Firebase Project loading page." width="700px"/>
+<img src="./images/Firebase_setup/4.png" alt="Firebase Project loading page." width="700px"/>
 
 <br>
 
@@ -75,7 +75,7 @@ Now's a good time to fill up on coffee, tea, whatever makes you happy!
 ## Project dashboard
 Ok! Once your project is created, you will land on this page.
 
-<img src="./images/5.png" alt="Firebase single project dashboard." width="700px"/>
+<img src="./images/Firebase_setup/5.png" alt="Firebase single project dashboard." width="700px"/>
 
 <br>
 
@@ -94,7 +94,7 @@ Make sure to leave the Firebase Hosting box unchecked for now.
 
 * If you need Firebase Hosting, check out [this link](https://firebase.google.com/products/hosting?gclid=CjwKCAjws--ZBhAXEiwAv-RNLy56zPOphuzMTXKtA3V11PFk3EwZ8uA2x19qUDrp2rgkbxws2pGWGBoCpe8QAvD_BwE&gclsrc=aw.ds).
 
-<img src="./images/6.png" alt="Firebase register application." width="700px"/>
+<img src="./images/Firebase_setup/6.png" alt="Firebase register application." width="700px"/>
 
 <br>
 
@@ -110,7 +110,7 @@ This image is edited for security reasons, but all of your credentials are wrapp
 <br>
 You will want to keep them secure in a .env file.
 
-<img src="./images/7.png" alt="Firebase npm and credentials page." width="700px"/>
+<img src="./images/Firebase_setup/7.png" alt="Firebase npm and credentials page." width="700px"/>
 
 <br>
 
@@ -136,7 +136,7 @@ You're good to ```npm install``` this basic template if you would like.
 If you forgot it, it's here:
 - ```npm install firebase```
 
-<img src="./images/7.png" alt="Firebase npm and credentials page." width="700px"/>
+<img src="./images/Firebase_setup/7.png" alt="Firebase npm and credentials page." width="700px"/>
 
 <br>
 
@@ -176,7 +176,7 @@ const firebaseConfig = {
 <br>
 
 ### Make sure your .env file is good and the firebase.js file looks like this:
-<img src="./images/8.png" alt="Firebase.js example file in VSCode." width="700px"/>
+<img src="./images/Firebase_setup/8.png" alt="Firebase.js example file in VSCode." width="700px"/>
 
 <br>
 
@@ -202,8 +202,8 @@ If you don't for some reason, click the navbar and open the <i>```Build```</i> a
 
 If you still don't see it, you can click the <i>```All products```</i>  tile icon and you'll see it listed on the new page. 
 
-<img src="./images/9.png" alt="Firestore card in the dashboard." width="700px"/>
-<img src="./images/10.png" alt="Firebase tab in the left navbar." width="700px"/>
+<img src="./images/Firebase_setup/9.png" alt="Firestore card in the dashboard." width="700px"/>
+<img src="./images/Firebase_setup/10.png" alt="Firebase tab in the left navbar." width="700px"/>
 
 ---
 
@@ -214,7 +214,7 @@ Sometime it takes a few seconds for the information within the orange banner to 
 <br>
 Just be patient and you will see the <i>```Create database```</i> button appear.
 
-<img src="./images/11.png" alt="Cloud Firestore dashboard." width="700px"/>
+<img src="./images/Firebase_setup/11.png" alt="Cloud Firestore dashboard." width="700px"/>
 
 ---
 
@@ -230,7 +230,7 @@ We are going to select ```Start in test mode``` , which creates a temporary data
 <br>
 This is just for practice.
 
-<img src="./images/12.png" alt="Firestore production and test mode configuration modal." width="700px"/>
+<img src="./images/Firebase_setup/12.png" alt="Firestore production and test mode configuration modal." width="700px"/>
 
 ---
 
@@ -246,7 +246,7 @@ This will reduce latency and increase reliability.
 <br>
 Please note that you cannot change the Firestore location once you establish a connection.
 
-<img src="./images/13.png" alt="Firestore server location configuration modal." width="700px"/>
+<img src="./images/Firebase_setup/13.png" alt="Firestore server location configuration modal." width="700px"/>
 
 ---
 
@@ -257,7 +257,7 @@ It will take just a few moments for your Firestore database to get created.
 <br>
 Another great opportunity for a quick break here!
 
-<img src="./images/14.png" alt="Firestore loading screen." width="700px"/>
+<img src="./images/Firebase_setup/14.png" alt="Firestore loading screen." width="700px"/>
 
 ---
 
@@ -270,7 +270,7 @@ You can manually enter data here, but we are looking to do that in a React app.
 <br>
 The next phase will walk you through connecting Firestore to a React app.
 
-<img src="./images/15.png" alt="Firestore document collection user interface." width="700px"/>
+<img src="./images/Firebase_setup/15.png" alt="Firestore document collection user interface." width="700px"/>
 
 ---
 
@@ -293,7 +293,7 @@ Navigate back to the ```firebase.js``` file in your ```src``` directory. We have
 
 ## Double check that your file matches this image:
 
-<img src="./images/16.png" alt="VSCode integrating Firestore in the firebase.js file." width="700px"/>
+<img src="./images/Firebase_setup/16.png" alt="VSCode integrating Firestore in the firebase.js file." width="700px"/>
 
 <br>
 

@@ -27,7 +27,7 @@
 }
 
 .loggedIn {
-  width: 635px;
+  width: 585px;
   height: 100px;
   display: flex;
   flex-direction: row;
@@ -44,16 +44,22 @@
 }
 
 .startText {
-  width: 700px;
+  width: 650px;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
 
 .header {
-  width: 300px;
+  width: 250px;
   font-size: 32px;
   font-weight: bold;
+}
+
+.image {
+  width: 710px;
+  border: 1px solid rgba(29, 55, 255, 0.5);
+  border-radius: 15px;
 }
 
 .buttonBox {

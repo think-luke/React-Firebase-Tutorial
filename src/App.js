@@ -35,7 +35,7 @@ function App() {
             {sessionUser ? 
             <div className={styles.loggedIn}>
                 <h1 className={styles.header}>
-                    Firebase tutorial:
+                    Firestore data:
                 </h1>
                 <div className={styles.buttonBox}>
                     <button 
@@ -60,12 +60,16 @@ function App() {
                 <h1 className={styles.startHeader}>
                     Welcome to the Firebase tutorial!
                 </h1>
-                <img src={firebaseLogo} alt="Firebase logo." />
+                <img 
+                    src={firebaseLogo} 
+                    alt="Firebase logo." 
+                    className={styles.image}
+                />
                 <h2 className={styles.startText}>Click the log in button to continue:</h2>
                 <Login loginUser={loginUser}/>
             </div>
             }
-            {sessionUser && <Home sessionUser={sessionUser} feature={feature}/>}
+            {sessionUser && <Home sessionUser={sessionUser} feature={feature} switchFeature={switchFeature}/>}
         </div>
     );
 }

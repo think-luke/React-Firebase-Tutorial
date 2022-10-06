@@ -17,53 +17,58 @@
 # With Firebase, authentication is really simple!
 Let's get started!
 
-## Navigate to your Firebase dashboard
+## Navigate to your dashboard and click on your project
+<img src="./images/User_auth/1.png" alt="Firebase dashboard." width="600px" />
 
 <br>
 
-## Click on your Firebase project
+### Open the ```Build``` according menu and select ```Authentication```
+<img src="./images/User_auth/2.png" alt="Firebase project dashboard." width="600px" />
 
 <br>
 
-## Open the ```Build``` according menu and select ```Authentication```
-
-<br>
-
-## Click the ```Set up sign-in method``` button
+### Click the ```Set up sign-in method``` button
+<img src="./images/User_auth/3.png" alt="Firebase project menu." width="600px" />
 
 <br>
 
 ## Look through all of the options
 For this tutorial, we are going to select ```Google```.
+<img src="./images/User_auth/4.png" alt="Firebase authentication options." width="600px" />
 
 <br>
 
-## Toggle the ```Enable``` option in the upper right corner
-Once you see it highlighted as Enabled, there will be a form two inputs to provide.
+### Toggle the ```Enable``` option in the upper right corner
+Once you see it highlighted in blue, there will be two inputs to fill in.
 <br>
 
-Create a name for the ```Project public-facing name``` section.
-<br>
-
-Also, fill out the ```Project support email```.
+<img src="./images/User_auth/5.png" alt="Firebase authentication options." width="600px" />
 
 <br>
 
-## There is one optional setting called ```Safelist client IDs from external projects```.
-<br>
 
-If you have this set up, navigate to your [Google Developer Console](https://console.cloud.google.com/projectselector2/apis/dashboard?pli=1&supportedpurview=project).
-<br>
-This is an optional setting, so you can skip this step as well.
+### Create a name for the ```Project public-facing name``` section.
+<img src="./images/User_auth/6.png" alt="Firebase authentication options." width="600px" />
 
 <br>
 
-## There is no need to fill out the Google SDK option either.
-Firebase will automatically generate a clientID and a secret key for you.
+
+### Also, fill out the ```Project support email```.
+<img src="./images/User_auth/7.png" alt="Firebase authentication options." width="600px" />
+
+<br>
+
+### There are two optional settings:
+Skip these if you are just practicing.
+- ```Safelist client IDs from external projects```
+- ```Web SDK configuration```
+
+<br>
+
+## Firebase will automatically generate a clientID and a secret key for you.
 <br>
 If you are employing Node.js, you cannot integrate the Firebase JavaScript SDK.
-<br>
-Unfortunately, you have to pass your Google API ceredentials to Firebase manually.
+
 <br>
 
 You need to read this document and follow the steps if you have not initialized a project already:
@@ -73,9 +78,18 @@ You need to read this document and follow the steps if you have not initialized 
 If you have a Google API account and already have a clientID and key, find it here:
 - [Google Developer Console](https://console.cloud.google.com/projectselector2/apis/dashboard?pli=1&supportedpurview=project).
 
+
+<br>
+
+### * These are basically for integrating a Firebase project as a microservice or if you are developing with Node.js or a similar non-browser environment.
+
+---
+
 <br>
 
 ## Once this is all set up, we can move to authentication in the React app.
+
+
 
 
 

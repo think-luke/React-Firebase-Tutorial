@@ -38,7 +38,7 @@ function Home({ feature, switchFeature }) {
     .catch(console.error);
     setUpdated(false);
     return 
-  },[updated]);
+  },[updated, feature]);
 
   useEffect(() => {
       retrievedData.length ? setLoaded(true) : setLoaded(false);
@@ -52,9 +52,9 @@ function Home({ feature, switchFeature }) {
   return (
     <div className={styles.app}>
       {fetching && <div>Loading...</div>}
-      {!loaded && !fetching && <div>No data to show...</div>}
-      {loaded && !fetching && feature === 'create' && <Create dataUpdated={dataUpdated} switchFeature={switchFeature}/>}
-      {loaded && feature === 'read' && <Read dataUpdated={dataUpdated} retrievedData={retrievedData}/>}
+      {!loaded && !fetching && feature === 'read' && <div>No data to show...</div>}
+      {!fetching && feature === 'create' && <Create dataUpdated={dataUpdated} switchFeature={switchFeature}/>}
+      {loaded && !fetching  && feature === 'read' && <Read dataUpdated={dataUpdated} retrievedData={retrievedData}/>}
     </div>
   );
 }

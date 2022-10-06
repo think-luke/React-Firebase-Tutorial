@@ -49,8 +49,7 @@ export default function Create({ dataUpdated, switchFeature }) {
         addDoc(ref, testData);
         console.log("You successfully completed your first POST request to your Firestore database.");
         dataUpdated(e);
-        switchFeature(e, 'read');   
-        return 
+        return switchFeature(e, "read"); 
         } catch(err) {
         return console.log(err)
         }
@@ -65,19 +64,23 @@ export default function Create({ dataUpdated, switchFeature }) {
                 htmlFor="example"
                 className={styles.label}
             />
+            Enter a message:
             <input 
                 type="text" 
+                id="example"
                 name="example"
                 className={styles.input}
                 onChange={handleText}
                 required 
             />
-            <button 
-                type="submit" 
-                className={styles.button}
-            >
-            Submit
-            </button>
+            <div className={styles.buttonBox}>
+                <button 
+                    type="submit" 
+                    className={styles.button}
+                >
+                Submit
+                </button>    
+            </div>
         </form>
     )
 };
