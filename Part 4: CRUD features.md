@@ -88,7 +88,3 @@ And last but not least, you will see your document data!
 # <i>Happy hacking! I hope this tutorial was helpful :)</i>
 
 ![Tech Hacker gif](https://media.giphy.com/media/KmHueA88mFABT9GkkR/giphy.gif)
-
-<br>
-
-## Stay tuned for a full CRUD feature walkthrough in this repo soon...

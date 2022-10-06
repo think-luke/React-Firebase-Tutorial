@@ -1,5 +1,5 @@
 # Getting Started with Firebase, Firestore and React
-<img src="./images/Firebase-React.png" alt="Firebase and React logos." width="700px" width="700px"/>
+<img src="./images/Firebase_React.png" alt="Firebase and React logos." width="700px" width="700px"/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,7 +9,7 @@ The root directory is called React-Firebase-Tutorial.
 
 # 1: Set up Firebase
 
-<img src="./images/Firebase-logo.png" alt="Firebase logo." width="700px" width="700px"/>
+<img src="./images/Firebase_logo.png" alt="Firebase logo." width="700px" width="700px"/>
 
 Let's start with the [Firebase website](https://firebase.google.com/).
 
