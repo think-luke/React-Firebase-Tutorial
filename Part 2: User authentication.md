@@ -1,5 +1,5 @@
 # User Authentication
-<img src="./images/authentication.png" alt="Finger print authentication photo." width="600px" />
+<img src="./images/User_auth/authentication.png" alt="Finger print authentication photo." width="600px" />
 
 ## If you write backend code, there are many issues to consider.
 - Middleware, CSRF, hashing credentials, security vulnerabilities
