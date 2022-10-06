@@ -76,5 +76,5 @@ This is a four part tutorial that will cover the following areas:
     3. Update (PUT/PATCH) request
     4. Destroy (DELETE) request
 
-# If this all sounds good, let's get started!
+# If this all sounds good, let's get started! [Part 1: Setup](./Part%201%3A%20Setup.md)
 <img src="./images/start.png" alt="Rocket ship launching with laptop background." width="610px"/>

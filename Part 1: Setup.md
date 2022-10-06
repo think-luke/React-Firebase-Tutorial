@@ -1,35 +1,35 @@
 # Getting Started with Firebase, Firestore and React
-<img src="./images/Firebase_React.png" alt="Firebase and React logos." width="700px" width="700px"/>
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-The root directory is called React-Firebase-Tutorial.
-
-<br>
-
 # 1: Set up Firebase
 
 <img src="./images/Firebase_logo.png" alt="Firebase logo." width="700px" width="700px"/>
 
-Let's start with the [Firebase website](https://firebase.google.com/).
+## Let's start with the [Firebase website](https://firebase.google.com/).
 
-## Put simply, Firebase is a cloud-based application platform. 
-It's competitors are Parse, MongoDB, Heroku, AWS Amplify, etc. 
+---
 
+## Put simply, <i>Firebase</i> is a cloud-based application platform.
+It's competitors are MongoDB, Parse, Heroku, AWS Amplify, etc.  
+
+<br>
+
+## <i>Firestore</i> is a database product offered by Firebase.
 There are many tools and frameworks that Firebase offers, and this walkthrough will cover [Firestore](https://cloud.google.com/firestore/docs#:~:text=Firestore%20is%20a%20NoSQL%20document,describes%20relationships%20between%20data%20objects.).
-- Firestore is "a NoSQL document database built for automatic scaling, high performance, and ease of application development." 
-- Firestore is serverless - no backend code is needed.
-
 * If you would like to research Firebase's other database solution, <i>Realtime Database</i>, you can learn more [here](https://firebase.google.com/docs/database/rtdb-vs-firestore).
 
 <br>
 
-## Firestore only executes code when an event is triggered. 
-You can write scripts to interact with other products like Google Sheets and you can also send HTTPS requests to store and retrieve data. 
+## <i>Firestore</i> only executes code when an event is triggered. 
+You can write scripts to interact with other products like Google Sheets.
+<br>
+You can also send HTTPS requests to store and retrieve data. 
 <br>
 It's really fast, convenient and pretty cool!
 
-Alright, now that you're at the website, create an account if you haven't or log in to access the dashboard.
+<br>
+
+---
+
+## Alright, now that you're at the website, create an account if you haven't or log in to access the dashboard.
 
 ---
 
@@ -44,6 +44,7 @@ This is what the Firebase dashboard looks like:
 <br>
 
 Begin by clicking the "Add Project" card under Your Firebase Projects.
+<br>
 You will see the following page and you can enter a name for your project:
 
 <img src="./images/2.png" alt="Firebase create project form." width="700px"/>
@@ -78,25 +79,34 @@ Ok! Once your project is created, you will land on this page.
 
 <br>
 
-There are so many forms and steps involved, but we're almost done with setting up Firebase!
-<br>
-The next thing you need to do is click on the web app ```</>``` button under the "Get started by adding Firebase to your app" header.
+## Wow we're almost done setting up Firebase!
 
-The following short form will appear - you just need to give your app a nickname and leave the Firebase Hosting box unchecked for now. 
 <br>
-If you need Firebase Hosting, check out [this link](https://firebase.google.com/products/hosting?gclid=CjwKCAjws--ZBhAXEiwAv-RNLy56zPOphuzMTXKtA3V11PFk3EwZ8uA2x19qUDrp2rgkbxws2pGWGBoCpe8QAvD_BwE&gclsrc=aw.ds).
+
+The next thing you need to do is click on the web app ```</>``` button.
+<br>
+
+It's under the ```Get started by adding Firebase to your app``` header.
+
+The following short form will appear - you just need to give your app a nickname. 
+<br>
+Make sure to leave the Firebase Hosting box unchecked for now. 
+
+* If you need Firebase Hosting, check out [this link](https://firebase.google.com/products/hosting?gclid=CjwKCAjws--ZBhAXEiwAv-RNLy56zPOphuzMTXKtA3V11PFk3EwZ8uA2x19qUDrp2rgkbxws2pGWGBoCpe8QAvD_BwE&gclsrc=aw.ds).
 
 <img src="./images/6.png" alt="Firebase register application." width="700px"/>
 
 <br>
 
-Now you will see a page with two blocks of code to copy. 
+## Now you will see a page with two blocks of code to copy. 
+* The first is the Firebase npm package. 
 <br>
-The first is the Firebase npm package. 
+
+* The second one has all of your keys and credentials for this Firebase project. 
+
 <br>
-The second one has all of your keys and credentials for this Firebase project. 
-<br>
-This image is edited for security reasons, but you will see all of your credentials in green wrapped in double quotes. 
+
+This image is edited for security reasons, but all of your credentials are wrapped in green double quotes. 
 <br>
 You will want to keep them secure in a .env file.
 
@@ -104,7 +114,7 @@ You will want to keep them secure in a .env file.
 
 <br>
 
-Leave this tab open and now let's move on to connecting your Firebase project to your React app!
+## Leave this tab open and now let's move on to connecting your React app!
 
 ---
 
@@ -117,7 +127,8 @@ In your terminal, bootstrap React with:
 
 Otherwise, this repo comes with a directory called React-Firebase-Tutorial. 
 <br>
-You're good to go with this basic template.
+
+You're good to ```npm install``` this basic template if you would like.
 
 <br>
 
@@ -169,7 +180,7 @@ const firebaseConfig = {
 
 <br>
 
-## Fantastic! Now Firebase and your React app are connected. Let's move on!
+## Now Firebase and your React app are connected. Piece of cake right?
 
 ---
 
@@ -185,9 +196,11 @@ Since this walkthrough covers Firestore, we need to initialize it within our cur
 
 You will most likely see <u><i>Cloud Firestore</i></u> on this page as a suggested product. 
 <br>
-If you don't for some reason, click the navbar and open the "Build" accordion to select "Firestore Database". 
+
+If you don't for some reason, click the navbar and open the <i>```Build```</i> accordion to select <i>```Firestore Database```</i> . 
 <br>
-If you still don't see it, you can click the "All products" tile icon and you'll see it listed on the new page. 
+
+If you still don't see it, you can click the <i>```All products```</i>  tile icon and you'll see it listed on the new page. 
 
 <img src="./images/9.png" alt="Firestore card in the dashboard." width="700px"/>
 <img src="./images/10.png" alt="Firebase tab in the left navbar." width="700px"/>
@@ -212,7 +225,8 @@ If you see a modal pop up, you're on the right track.
 <br>
 This two part form will ask you to select production or test mode, as well a geographical server location. 
 <br>
-We are going to select test mode, which creates a temporary database that will expire in 30 days. 
+
+We are going to select ```Start in test mode``` , which creates a temporary database that will expire in 30 days. 
 <br>
 This is just for practice.
 
@@ -252,7 +266,7 @@ Another great opportunity for a quick break here!
 ## Ready to go!
 If you're familiar with Postbird, this is basically that but with a cleaner UI. 
 <br>
-You can manually enter data here, but we are looking to create a frontend application.
+You can manually enter data here, but we are looking to do that in a React app.
 <br>
 The next phase will walk you through connecting Firestore to a React app.
 
@@ -271,23 +285,24 @@ Navigate back to the ```firebase.js``` file in your ```src``` directory. We have
 
 <br>
 
+## If you would like to follow the offical doc, you can call firestore ```db``` instead
+- export const db = getFirestore(app);
+- Purely your preference, but don't forget what you named it.
+
+<br>
+
 ## Double check that your file matches this image:
 
 <img src="./images/16.png" alt="VSCode integrating Firestore in the firebase.js file." width="700px"/>
 
 <br>
 
-## Light work - Firebase and Firestore are so fast to set up!
-
 ---
 
-<br>
-
+# Light work - Firebase and Firestore are so fast to set up!
 ![SpongeBob dancing](https://media.giphy.com/media/3MOTl6120JZHa/giphy.gif)
 
 <br>
 
----
-
-## Alright folks, that wraps up the set up phase!
-Move on to Part 2: CRUD features :)
+# Alright folks, that wraps up the setup phase!
+## Move on to: [Part 2: User authentication](./Part%202%3A%20User%20authentication.md)
