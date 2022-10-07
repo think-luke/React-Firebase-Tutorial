@@ -131,13 +131,42 @@ And last but not least, you will see your document data!
 
 <br>
 The userId below is excluded for security reasons.
+
 <img src="./images/17.png" alt="New Firestore database entry." width="700px"/>
 
 <br>
 
 ---
 
+# 3: Read the post that you just created
+Retrieving data in Firestore is also an easy task. There aren't any associations because it's a NoSQL database, but you still need to query properly. This is where database architecture becomes important.
+
 <br>
+
+## This repo was designed to be a top-heavy application
+There are no routes because it's a simple app, but you should consider paginating your requests if you have a large app with a state management library like MobX or Redux. Your store will crash if you query everything.
+
+<br>
+
+## Open the ```Home.js``` file in the ```src``` folder
+You will see the following imports at the top of the file:
+```
+import { 
+    query, 
+    getDocs, 
+    where, 
+    collection 
+} from '@firebase/firestore'
+```
+
+Also, once the user is authenticated in the ```authentication.js``` file, the ```App.js``` file prop drills the user info to various components including the ```Home.js``` file.
+<br>
+
+You will find a ```useEffect()``` function that retrieves data from Firestore.
+
+<img src="./images/CRUD/6.png" alt="Icons representing CRUD features." width="700px"/>
+
+Note that we are putting an async function within the useEffect() and invoking the query method.
 
 # <i>Happy hacking! I hope this tutorial was helpful :)</i>
 

@@ -2,7 +2,12 @@
 import { useState, useEffect } from 'react';
 //Firestore
 import { firestore } from "./firebase";
-import { query, getDocs, where, collection } from '@firebase/firestore';
+import { 
+  query, 
+  getDocs, 
+  where, 
+  collection 
+} from '@firebase/firestore';
 //Styling
 import styles from './Home.module.css';
 //Components
