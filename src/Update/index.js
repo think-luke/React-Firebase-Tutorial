@@ -7,7 +7,7 @@ import styles from './Update.module.css';
 import { firestore } from "../firebase";
 import { doc, updateDoc } from "@firebase/firestore";
 
-export default function Update({ event, handleEditModal, dataUpdated }) {
+export default function Update({ sessionUser, event, handleEditModal, dataUpdated }) {
     //Updated input state variable
     const [newText, setNewText] = useState("");
 
@@ -25,6 +25,7 @@ export default function Update({ event, handleEditModal, dataUpdated }) {
     const handleUpdate = async(e) => {
         e.preventDefault();
         await updateDoc(eventRef, {
+            userId: sessionUser.id,
             text: newText
         });
         dataUpdated(e);

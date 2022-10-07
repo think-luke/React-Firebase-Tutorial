@@ -27,7 +27,6 @@ function Home({ sessionUser, feature, switchFeature }) {
         //Retrieve results with query object
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach(doc => {
-            console.log(doc.id, " => ", doc.data());
             const obj = {id: doc.id, data: doc.data()}
             dataArr.push(obj)
         }) 
@@ -57,8 +56,18 @@ function Home({ sessionUser, feature, switchFeature }) {
       </div>
       {fetching && <div>Loading...</div>}
       {!loaded && !fetching && feature === 'read' && <div>No data to show...</div>}
-      {!fetching && feature === 'create' && <Create dataUpdated={dataUpdated} switchFeature={switchFeature} sessionUser={sessionUser}/>}
-      {loaded && !fetching  && feature === 'read' && <Read dataUpdated={dataUpdated} retrievedData={retrievedData}/>}
+      {!fetching && feature === 'create' && 
+      <Create 
+        dataUpdated={dataUpdated} 
+        switchFeature={switchFeature} 
+        sessionUser={sessionUser}
+      />}
+      {loaded && !fetching  && feature === 'read' && 
+      <Read 
+        dataUpdated={dataUpdated} 
+        retrievedData={retrievedData}
+        sessionUser={sessionUser}
+      />}
     </div>
   );
 }

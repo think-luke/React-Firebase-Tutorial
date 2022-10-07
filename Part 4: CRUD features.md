@@ -1,11 +1,62 @@
 # Welcome to Part 4: CRUD features!
-<img src="./images/CRUD.png" alt="Icons representing CRUD features." width="700px"/>
+<img src="./images/CRUD/CRUD.png" alt="Icons representing CRUD features." width="700px"/>
 
 ---
 
 <br>
 
-# 1: Sending your first create (POST) request
+# 1: Setting up data validations (security rules)
+You definitely don't want to give everyone permission to perform CRUD operations. You want to check authentication status and credentials.
+<br>
+
+Let's walk through setting up rules in the Firestore console.
+
+<br>
+
+## Navigate to your Firestore database console
+<img src="./images/CRUD/1.png" alt="Firestore database console." width="700px"/>
+
+<br>
+
+## Click on ```Rules``` under the ```Cloud Firestore``` header
+The following page with your current rules will load:
+<img src="./images/CRUD/2.png" alt="Firestore rules and data validation page." width="700px"/>
+
+<br>
+
+## [Here](https://cloud.google.com/firestore/docs/security/rules-conditions) is a link to the Firestore data validation doc
+It is really handy to split your window and follow the official doc side-by-side to check your syntax.
+
+<img src="./images/CRUD/3.png" alt="Screenshot of Firestore rules console on the left and the Firestore official docs for restrictions on new data on the right." width="700px"/>
+
+<br>
+
+## Your security rules can be simple or complex
+If this app is just for you, then running it on local host and keeping default settings is ok.
+<br>
+
+However, if you want to dig into operators, you can employ ```if("variable" in document_name)```, ```==``` or ```!=``` and chain conditionals in ```&&``` to have more strict rules like this:
+
+<img src="./images/CRUD/4.png" alt="A screenshot of stricter Firestore rules." width="700px"/>
+
+<br>
+
+## Sometimes we learn about new project requirements and need to edit rules
+
+You can check previous security rules for version control and compare them to the latest version for a better debugging experience:
+
+<img src="./images/CRUD/5.png" alt="A screenshot of Firestore's previous security rules panel." width="700px"/>
+
+<br>
+
+## That covers data validation and permissions!
+It's so simple in Firestore, but please make sure to also add error handling and data validation in the frontend as well to notify users and add a second layer of defense.
+
+---
+
+<br>
+
+# 2: Sending your first create (POST) request
 Sending data to your Firestore database from a React frontend is so simple it's truly wild. If you already have your own form, you are golden. If you just want to set up a quick test, then the ```Create``` directory's ```index.js``` file is ready to go.
 
 Basically, all you have to do is add these imports at the top of the file:

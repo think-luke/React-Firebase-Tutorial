@@ -65,11 +65,18 @@ function App() {
                     alt="Firebase logo." 
                     className={styles.image}
                 />
-                <h2 className={styles.startText}>Click the log in button to continue:</h2>
+                <h2 className={styles.startText}>
+                    Click the log in button to continue:
+                </h2>
                 <Login loginUser={loginUser}/>
             </div>
             }
-            {sessionUser && <Home sessionUser={sessionUser} feature={feature} switchFeature={switchFeature}/>}
+            {sessionUser && 
+            <Home 
+                sessionUser={sessionUser} 
+                feature={feature} 
+                switchFeature={switchFeature}
+            />}
         </div>
     );
 }
