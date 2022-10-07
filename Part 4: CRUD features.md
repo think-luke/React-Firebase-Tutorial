@@ -34,7 +34,8 @@ In ```Part 1: Setup```, you initialized a ```firestore``` or ```db``` variable i
 You should validate your data in the frontend as well, but this tutorial only includes one text input so that step is left out.
 
 1. Define an object that you want to store in Firestore.
-2. i.e. ```let demoData = { text };```
+2. i.e. ```let demoData = { userId: sessionUser.id, text };```
+3. There are no associations in a NoSQL database, but make sure to pass a session user ID so you can query a collection based on the logged in user.
 3. Wrap the ```addDoc()``` method in a try catch block.
 4. Invoke ```addDoc()``` by passing the ```reference``` variable and the data object you defined.
 5. i.e. ```addDoc(reference, demoData);```
