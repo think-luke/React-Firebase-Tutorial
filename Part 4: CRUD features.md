@@ -162,11 +162,39 @@ import {
 Also, once the user is authenticated in the ```authentication.js``` file, the ```App.js``` file prop drills the user info to various components including the ```Home.js``` file.
 <br>
 
-You will find a ```useEffect()``` function that retrieves data from Firestore.
+Inside the Home component, there are a number of state variables that handle what gets displayed. These are not too important since you will be customizing them yourself when you have your own project.
+<br>
+
+Below them, you will find a ```demoReference``` variable is declared which stores the ```collection``` method's return value. We are passing the ```firestore``` database variable that we imported from ```firebase.js``` and the name of the collection we are going to reference.
+
+<br>
+
+Next, there is a ```useEffect()``` function that retrieves data from Firestore.
 
 <img src="./images/CRUD/6.png" alt="Icons representing CRUD features." width="700px"/>
 
-Note that we are putting an async function within the useEffect() and invoking the query method.
+Note that we are putting an async function within the ```useEffect()``` and invoking the ```query``` method. The ```demoReference``` we defined gets passed to the ```query``` method and we are also specifying which documents to retrieve. 
+<br>
+
+In this tutorial's case, string interpolation is being incorporated to find documents where the userId matches the session user's unique ID.
+
+<br>
+
+The ```where``` method was imported at the top of the file and make sure that your syntax is correct. i.e. ```==``` instead of ```===```. Check for typos for the key you are looking for.
+
+<br>
+
+Outside of the ```fetchData``` function, we immediately invoke it and catch any errors.
+
+<br>
+
+Once the data gets retrieved, this component prop drills data to the ```<Read />``` component.
+
+---
+
+<br>
+
+
 
 # <i>Happy hacking! I hope this tutorial was helpful :)</i>
 
