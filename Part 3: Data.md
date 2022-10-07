@@ -112,6 +112,8 @@ If you have a large single document, retrieval times will become slower.
 
 # Multiple collections
 
+<img src="./images/Data/file_cabinet.png" alt="A photo of multiple folders in one drawer." width="700px" />
+
 ## Multiple single depth colletions bring greater organization to data.
 The Pros and Cons are pretty similar to a single collection approach.
 <br>
@@ -140,9 +142,11 @@ The document IDs are hashed, not auto-incremented, so you will need to get cleve
 <br>
 
 # Subcollections
+
+<img src="./images/Data/subcollection.png" alt="An illustration of folders within folders." width="700px" />
+
 Subcollections are like child database tables. They are nested within a parent document. If you know ahead of time that data will expand and form relationships, subcollections are a great option.
 
-<img src="./images/Data/file_cabinet.png" alt="A photo of organized files." width="700px" />
 
 <br>
 
@@ -204,7 +208,7 @@ There will likely be many subcollections of departments.
 
 <br>
 
-## According to the [Firestore doc]() you can nest subcollections 100 levels deep.
+## According to the [Firestore doc](https://firebase.google.com/docs/firestore/data-model#subcollections) you can nest subcollections 100 levels deep.
 Definitely brainstorm and compartmentalize collections in groupings that make sense to avoid nested hell.
 
 ![Matryoshka Doll](https://media.giphy.com/media/nthoYgQ91Up2u7qmcE/giphy.gif)
@@ -215,7 +219,7 @@ Definitely brainstorm and compartmentalize collections in groupings that make se
 
 # Now is a great time to brainstorm if you are applying this tutorial to a separate project
 ### Whiteboard some thoughts and research your needs before you start building!
-
+<img src="./images/Data/whiteboard.png" alt="Firestore document collection user interface." width="700px"/>
 ---
 
 <br>

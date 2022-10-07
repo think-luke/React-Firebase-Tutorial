@@ -76,9 +76,10 @@ You will also see a hashed document name such as:
 
 And last but not least, you will see your document data!
 - ```text: "Your form input."```
+- ```userId: "The session user's ID"```
 
 <br>
-
+The userId below is excluded for security reasons.
 <img src="./images/17.png" alt="New Firestore database entry." width="700px"/>
 
 <br>

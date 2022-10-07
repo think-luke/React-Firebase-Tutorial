@@ -91,8 +91,10 @@ It's under the ```Get started by adding Firebase to your app``` header.
 The following short form will appear - you just need to give your app a nickname. 
 <br>
 Make sure to leave the Firebase Hosting box unchecked for now. 
-
-* If you need Firebase Hosting, check out [this link](https://firebase.google.com/products/hosting?gclid=CjwKCAjws--ZBhAXEiwAv-RNLy56zPOphuzMTXKtA3V11PFk3EwZ8uA2x19qUDrp2rgkbxws2pGWGBoCpe8QAvD_BwE&gclsrc=aw.ds).
+<br>
+- Uncheck this because we are only running this project on localhost.
+- This tutorial doesn't assume that you've settled with Firebase to host your app. Vercel, Netlify, Heroku, GitHub Pages, etc. are available too.
+- If you want to take full advantage of Firebase as your app platform, check out [this link](https://firebase.google.com/products/hosting?gclid=CjwKCAjws--ZBhAXEiwAv-RNLy56zPOphuzMTXKtA3V11PFk3EwZ8uA2x19qUDrp2rgkbxws2pGWGBoCpe8QAvD_BwE&gclsrc=aw.ds).
 
 <img src="./images/Firebase_setup/6.png" alt="Firebase register application." width="700px"/>
 
