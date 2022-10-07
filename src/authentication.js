@@ -48,15 +48,12 @@ export const Login = ({ loginUser }) => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
-            // User array for state variable in App.js
-            const userArr =[];
-            // User object
+            // User object for sessionUser state variable
             const userObj = {
                 name: user.displayName, 
                 id: user.uid
             };
-            userArr.push(userObj);
-            return loginUser(userArr);
+            return loginUser(userObj);
         }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;

@@ -9,12 +9,13 @@ import styles from './Home.module.css';
 import Create from './Create';
 import Read from './Read';
 
-function Home({ feature, switchFeature }) {
-  const demoReference = collection(firestore, "demo_collection");
+function Home({ sessionUser, feature, switchFeature }) {
   const [loaded, setLoaded] = useState(false);
   const [fetching, setFetching] = useState(false);
   const [updated, setUpdated] = useState(false);
   const [retrievedData, setRetrievedData] = useState("");
+
+  const demoReference = collection(firestore, "demo_collection");
 
   useEffect(() => {
     const fetchData = async() => {
@@ -51,9 +52,12 @@ function Home({ feature, switchFeature }) {
 
   return (
     <div className={styles.app}>
+      <div>
+        <h1 className={styles.userInfo}>{`Hello ${sessionUser.name}!`}</h1>
+      </div>
       {fetching && <div>Loading...</div>}
       {!loaded && !fetching && feature === 'read' && <div>No data to show...</div>}
-      {!fetching && feature === 'create' && <Create dataUpdated={dataUpdated} switchFeature={switchFeature}/>}
+      {!fetching && feature === 'create' && <Create dataUpdated={dataUpdated} switchFeature={switchFeature} sessionUser={sessionUser}/>}
       {loaded && !fetching  && feature === 'read' && <Read dataUpdated={dataUpdated} retrievedData={retrievedData}/>}
     </div>
   );

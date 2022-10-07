@@ -1,4 +1,4 @@
-# Welcome to Part 2: CRUD features!
+# Welcome to Part 4: CRUD features!
 <img src="./images/CRUD.png" alt="Icons representing CRUD features." width="700px"/>
 
 ---
@@ -6,22 +6,23 @@
 <br>
 
 # 1: Sending your first create (POST) request
-Sending data to your Firestore database from a React frontend is so simple it is truly wild. If you already have your own form, you are golden. If you just want to set up a quick test, then the ```Create``` directory's ```index.js``` file is ready to go.
+Sending data to your Firestore database from a React frontend is so simple it's truly wild. If you already have your own form, you are golden. If you just want to set up a quick test, then the ```Create``` directory's ```index.js``` file is ready to go.
 
 Basically, all you have to do is add these imports at the top of the file:
 - Fix the import if you have your form nested in a subdirectory within the ```src``` folder.
 - ```import { firestore } from "./firebase";```
 - ```import { addDoc, collection } from "@firebase/firestore";```
 
-In ```Part 1: Setup```, you just initialized firestore in the ```src``` folder's ```firebase.js``` file so that is a relative import. The ```addDoc()``` and ```collection()``` built-in methods are what we will be employing to define the collection name and send a POST request to Firestore.
+In ```Part 1: Setup```, you initialized a ```firestore``` or ```db``` variable in the ```src``` folder's ```firebase.js``` file so that is a relative import. The ```addDoc()``` and ```collection()``` built-in methods are what we will be employing to define the collection name and send a POST request to Firestore.
 
 --- 
 
 <br>
 
 ## Create a reference to pass to the addDoc() method.
-- You will invoke the imported collection() method within your functional component.
-- ```const reference = collection(firestore, "enter_a_name_here");```
+- Choose a a name for your new collection - it can be anything you want.
+- Next, invoke the collection() built-in method within your functional component.
+    - ```const reference = collection(firestore, "enter_a_name_here");```
 
 <br>
 
@@ -46,7 +47,7 @@ You should validate your data in the frontend as well, but this tutorial only in
 
 <br>
 
-## If you followed along successfully, you will see the following message get printed in your Google Chrome dev tools console:
+## If you submitted a message with the ```Create``` component provided to you, you will see the following message get printed in your Google Chrome dev tools console:
 
 <br>
 

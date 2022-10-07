@@ -7,7 +7,7 @@ import styles from './Create.module.css';
 import { firestore } from "../firebase";
 import { addDoc, collection } from "@firebase/firestore";
 
-export default function Create({ dataUpdated, switchFeature }) {
+export default function Create({ sessionUser, dataUpdated, switchFeature }) {
     //Form input state variable
     const [text, setText] = useState("");
 
@@ -29,6 +29,7 @@ export default function Create({ dataUpdated, switchFeature }) {
         This one is very simple, but you could do something like:
 
         let trainingData = {
+            userId: sessionUser.id,
             eventType,
             description,
             url,
@@ -40,6 +41,7 @@ export default function Create({ dataUpdated, switchFeature }) {
         */
 
         let testData = {
+            userId: sessionUser.id,
             text,
             demo: true
         }

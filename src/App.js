@@ -12,8 +12,8 @@ function App() {
     const [sessionUser, setSessionUser] = useState(null);
     const [feature, setFeature] = useState('read');
 
-    const loginUser = (userArr) => {
-        setSessionUser(userArr);
+    const loginUser = (userObj) => {
+        setSessionUser(userObj);
         return
     };
 
