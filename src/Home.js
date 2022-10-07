@@ -23,7 +23,7 @@ function Home({ sessionUser, feature, switchFeature }) {
         //Going to set state to an array of objects
         const dataArr = [];
         //Simple query object with the demoReference we wrote
-        const q = query(demoReference, where("demo", "==", true));
+        const q = query(demoReference, where("userId", "==", `${sessionUser.id}`));
         //Retrieve results with query object
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach(doc => {
@@ -52,7 +52,7 @@ function Home({ sessionUser, feature, switchFeature }) {
 
   return (
     <div className={styles.app}>
-      <div>
+      <div className={styles.userBox}>
         <h1 className={styles.userInfo}>{`Hello ${sessionUser.name}!`}</h1>
       </div>
       {fetching && <div>Loading...</div>}

@@ -42,8 +42,7 @@ export default function Create({ sessionUser, dataUpdated, switchFeature }) {
 
         let testData = {
             userId: sessionUser.id,
-            text,
-            demo: true
+            text
         }
         //Wrap this in a try catch block
         try {

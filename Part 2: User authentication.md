@@ -104,6 +104,25 @@ If you have a Google API account and already have a clientID and key, find it he
 
 <br>
 
+## There are also three options for authentication state persistence.
+- Local storage
+- Session storage 
+- None
+- [Link to examples](https://firebase.google.com/docs/auth/web/auth-state-persistence)
+
+These days, many apps hide the ```log out``` button in nested places.
+<br>
+It's pretty common to have to navigate to your ```settings``` endpoint to even see the log out button.
+<br>
+So, that means that major apps want to do everything they can to keep you logged in.
+
+<br>
+
+## It's up to you to decide how you want to handle the logged in state
+For this tutorial we are going to apply the ```SESSION``` option.
+
+<br>
+
 ### In addition, you can npm install Google's UI or build your own.
 This repo contains simple custom login and log out buttons.
 

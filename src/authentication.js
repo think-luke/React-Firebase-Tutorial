@@ -1,8 +1,10 @@
 //Firebase
 import { 
-    getAuth, 
+    getAuth,
+    setPersistence, 
+    browserSessionPersistence,
     signInWithPopup, 
-    signOut, 
+    signOut,
     GoogleAuthProvider 
 } from "firebase/auth";
 
@@ -38,31 +40,35 @@ export const Login = ({ loginUser }) => {
     
     const login = (e) => {
         e.preventDefault();
-        signInWithPopup(auth, provider)
-        .then((result) => {
-            /*
-                This gives you a Google Access Token. 
-                You can use it to access the Google API.
-            */ 
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
-            // User object for sessionUser state variable
-            const userObj = {
-                name: user.displayName, 
-                id: user.uid
-            };
-            return loginUser(userObj);
-        }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            const email = error.customData.email;
-            // The AuthCredential type that was used.
-            const credential = GoogleAuthProvider.credentialFromError(error);
-        });    
+        //This line allows session storage auth persistence for your users
+        setPersistence(auth, browserSessionPersistence)
+        .then(() => {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    /*
+                        This gives you a Google Access Token. 
+                        You can use it to access the Google API.
+                    */ 
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    // The signed-in user info.
+                    const user = result.user;
+                    // User object for sessionUser state variable
+                    const userObj = {
+                        name: user.displayName, 
+                        id: user.uid
+                    };
+                    return loginUser(userObj);
+                }).catch((error) => {
+                    // Handle Errors here.
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // The email of the user's account used.
+                    const email = error.customData.email;
+                    // The AuthCredential type that was used.
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                });    
+        })
     }
 
     return (
