@@ -120,6 +120,28 @@ So, that means that major apps want to do everything they can to keep you logged
 
 ## It's up to you to decide how you want to handle the logged in state
 For this tutorial we are going to apply the ```SESSION``` option.
+<br>
+According to the [Firebase doc](https://firebase.google.com/docs/auth/web/auth-state-persistence), you can import ```browserSessionPersistence``` and invoke this method in a sign-in component like this:
+
+```
+import { getAuth, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from "firebase/auth";
+
+const auth = getAuth();
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
+    // ...
+    // New sign-in will be persisted with session persistence.
+    return signInWithEmailAndPassword(auth, email, password);
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+  ```
 
 <br>
 
@@ -147,9 +169,11 @@ Some people prefer to put these in a ```utils``` folder, so now is a good time t
 ## There are four imports in this file
 ```
 import { 
-    getAuth, 
+    getAuth,
+    setPersistence, 
+    browserSessionPersistence,
     signInWithPopup, 
-    signOut, 
+    signOut,
     GoogleAuthProvider 
 } from "firebase/auth";
 ```
@@ -159,7 +183,7 @@ The ```GoogleAuthProvider``` is an object that you will initialize, and the othe
 <br>
 
 ## Read the comments if you have scoping requirements, language customizations or additional form parameters
-Otherwise, scroll down to line 34.<br>
+Otherwise, scroll down to line 36.<br>
 You will see this globally scoped variable:
 ```
 const auth = getAuth();
@@ -179,48 +203,53 @@ This React app doesn't employ state management libraries, so there is a ```login
 
 <br>
 
-## Next, simply create a function that contains the signInWithPopup Firebase method.
+## Next, invoke the imported ```setPersistence``` method by passing the ```auth``` variable and the provider that was just declared.
+- The method is followed by a then/catch block in accordance with the Firebase doc example, but you can customize this with async/await if you wish.
+
+<br>
+
+## Invoke the ```signInWithPopup``` Firebase method.
 <br>
 In this tutorial, there is a function called login:
+
 <img src="./images/User_auth/11.png" alt="Code snippet for logging in with Google." width="600px"/>
-<br>
-
-We start off by invoking the signInWithPopup() method by passing the ```auth``` and ```provider``` variables.
-
-<br>
-Then, we take the result and retrieve the credential object in line 47.
-
-<br>
-You can dig into the credential object to retrieve a token to access the Google API. If you don't have a use for it, you can ignore that step.
-
-<br>
-In this tutorial's case, the result object needs to get parsed to retrive user information. The user name and ID are what we would like to access.
 
 <br>
 
-You are free to incorporate state management logic here and connect this function to a store in your ```src``` folder.
-
-<br>
-It's also a good idea to catch errors and handle them in appropriate manners.
+### We start off by invoking the signInWithPopup() method by passing the ```auth``` and ```provider``` variables.
+- Then, we take the result and retrieve the credential object in line 52.
+- You can dig into the credential object to retrieve a token to access the Google API. If you don't have a use for it, you can ignore that step.
+- In this tutorial's case, the result object needs to get parsed to retrive user information. The user name and ID are what we would like to access.
+- You are free to incorporate state management logic here and connect this function to a store in your ```src``` folder.
+- It's also a good idea to catch errors and handle them in appropriate manners.
 
 <br>
 
 ## When you're finished with this step, you can apply an ```onClick``` event listener to a button you made or imported from a UI library. That's all there is to it!
+Here is an example sing-in button:
+
+<img src="./images/User_auth/12.png" alt="Code snippet for logging out with Google." width="600px"/>
+
+<br>
 
 ---
+
 <br>
 
 # Logging out
 ## If you managed to set up your app to switch routes or modes after log in, you are good to continue!
+Once your user logs in, there should be a separate page.
+<br>
+This tutorial checks if there is a ```sessionUser``` in the ```App.js``` file.
+<br>
+
+The ```Home``` component is only displayed when a sessionUser is defined.
 
 ---
 
 <br>
 
 ## Logging a user out in Firebase is even more simple
-<img src="./images/User_auth/12.png" alt="Code snippet for logging out with Google." width="600px"/>
-<br>
-
 ## Make sure you imported the signOut() built-in method
 - Create a custom logout handler function based on your needs
 - Just invoke the signOut() method with the auth variable
@@ -228,6 +257,9 @@ It's also a good idea to catch errors and handle them in appropriate manners.
 - Catch errors
 - Pass the function to an onClick event listener in a button
 
+<br>
+
+<img src="./images/User_auth/13.png" alt="Code snippet for logging out with Google." width="600px"/>
 <br>
 
 # That's all there is to it! So simple right?
