@@ -192,12 +192,13 @@ Outside of the ```fetchData``` function, we immediately invoke it and catch any 
 
 <br>
 
-Once the data gets retrieved, this component prop drills data to the ```<Read />``` component. This component maps through the 
+Once the data gets retrieved, this component prop drills data to the ```<Read />``` component. This component maps through the ```retrievedData``` array and passes each document or ```event``` to a <DemoCard /> component. It's always important to note that when you loop through data to generate components, you need a unique ID as a ```key``` prop. Avoid incoporating temporary fixes like ```key=idx``` because ```idx``` will definitely cause issues down the road and your app will break. 
 
 ---
 
 <br>
 
+# 4: Update the post you created
 
 
 # <i>Happy hacking! I hope this tutorial was helpful :)</i>
