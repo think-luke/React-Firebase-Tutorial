@@ -231,8 +231,11 @@ Avoid incoporating temporary fixes like ```key=idx``` because ```idx``` will def
 
 # 5: Delete your post
 The last step in this tutorial is deleting the post you created! 
+The Destroy component is imported in ```DemoCard.js``` but the logic is in the ```Destroy``` directory.
 
-## Navigate to ```DemoCard.js``` in the ```Cards``` directory. 
+<br>
+
+## Navigate to ```index.js``` in the ```Destroy``` directory. 
 At the top of the file, you will see these imports:
 ```
 import { firestore }from "../firebase";
@@ -246,9 +249,10 @@ For this tutorial, the following ```onClick``` function passed to the ```<img>``
 const handleDelete = async(e) => {
     e.preventDefault();
     await deleteDoc(doc(firestore, "demo_collection", `${event.id}`));
-    console.log("You successfully deleted a single document from Firestore.")
+    console.log("You successfully deleted a single document from Firestore.");
     dataUpdated(e);
-}
+    return handleDeleteModal(e);
+};
 ```
 <br>
 
@@ -259,12 +263,14 @@ All you need to do is define an async function and await the ```deleteDoc``` met
 - Also pass the name of the collection and the specific file ID
 - The document ID is prop drilled in this case
 
+<br>
+
 ## Note that the security rules in Firestore that you defined earlier limit which docs you can delete
 Only documents with your userID can be deleted because you defined this rules in the Firestore console.
+
+<br>
+
 # That's it folks you did it!
-
-
-
-# <i>Happy hacking! I hope this tutorial was helpful :)</i>
+## <i>Happy hacking! I hope this tutorial was helpful :)</i>
 
 ![Tech Hacker gif](https://media.giphy.com/media/KmHueA88mFABT9GkkR/giphy.gif)

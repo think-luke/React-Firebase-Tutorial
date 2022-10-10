@@ -16,15 +16,14 @@ export default function Destroy({ event, dataUpdated, handleDeleteModal }) {
     }
 
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>Delete entry</h1>
-            <form className={styles.form}>
-                <label>{`Are you sure you want to delete this document?`} </label>
+        <div className={styles.modal}>
+            <div className={styles.container}>
+                <h1 className={styles.title}>Are you sure you want to delete this document?</h1>
                 <div className={styles.buttonBox}>
                     <button 
                         type="button" 
                         className={styles.button}
-                        onClick={e => handleDeleteModal(e)}
+                        onClick={handleDeleteModal}
                     >
                         Cancel
                     </button>
@@ -36,7 +35,16 @@ export default function Destroy({ event, dataUpdated, handleDeleteModal }) {
                         Confirm
                     </button>
                 </div>
-            </form>
+            </div>
+            <div className={styles.exitButtonBox}>
+                <button 
+                    type="button" 
+                    onClick={handleDeleteModal}
+                    className={styles.exitButton}
+                >
+                    X
+                </button>
+            </div>
         </div>
     )
 }

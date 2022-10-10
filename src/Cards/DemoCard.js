@@ -22,7 +22,7 @@ export default function DemoCard({ sessionUser, event, dataUpdated }) {
 
     const handleDeleteModal = (e) => {
         e.preventDefault();
-        setDeleteModal(!editModal);
+        setDeleteModal(!deleteModal);
         return
     }
 
