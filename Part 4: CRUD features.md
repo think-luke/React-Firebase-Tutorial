@@ -173,7 +173,7 @@ Next, there is a ```useEffect()``` function that retrieves data from Firestore.
 
 <img src="./images/CRUD/6.png" alt="Icons representing CRUD features." width="700px"/>
 
-Note that we are putting an async function within the ```useEffect()``` and invoking the ```query``` method. The ```demoReference``` we defined gets passed to the ```query``` method and we are also specifying which documents to retrieve. 
+Note that we are putting an async function called ```fetchData``` within the ```useEffect()```. In the first line, this function activates a useState variable to display a loading message. Then an empty array called ```dataArr``` gets defined to store incoming data. Another variable called ```q``` is defined to store a simple query object with the ```demoReference``` we defined. The ```demoReference``` we created gets passed to the ```query``` method and we are also specifying which documents to retrieve. 
 <br>
 
 In this tutorial's case, string interpolation is being incorporated to find documents where the userId matches the session user's unique ID.
@@ -184,11 +184,15 @@ The ```where``` method was imported at the top of the file and make sure that yo
 
 <br>
 
+Next, all documents that match the ```q``` query object's criteria are retrieved with the ```getDocs()``` asynchronous method. The results are stored in a variable called ```querySnapshot```. We are going to loop through all documents and store necessary data in an object to push to the empty array we defined earlier. You can ```console.log()``` each document to see the underlying structure, but note that you need to invoke the ```.data()``` method to access the user generated message or other information depending on what your form and user input looks like.
+
+<br>
+
 Outside of the ```fetchData``` function, we immediately invoke it and catch any errors.
 
 <br>
 
-Once the data gets retrieved, this component prop drills data to the ```<Read />``` component.
+Once the data gets retrieved, this component prop drills data to the ```<Read />``` component. This component maps through the 
 
 ---
 
