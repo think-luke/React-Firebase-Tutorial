@@ -228,6 +228,7 @@ Avoid incoporating temporary fixes like ```key=idx``` because ```idx``` will def
 
 # 4: Update the post you created
 
+
 # 5: Delete your post
 The last step in this tutorial is deleting the post you created! 
 
