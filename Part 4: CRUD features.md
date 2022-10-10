@@ -162,10 +162,14 @@ import {
 Also, once the user is authenticated in the ```authentication.js``` file, the ```App.js``` file prop drills the user info to various components including the ```Home.js``` file.
 <br>
 
-Inside the Home component, there are a number of state variables that handle what gets displayed. These are not too important since you will be customizing them yourself when you have your own project.
+Inside the Home component, there are a number of state variables that handle what gets displayed. 
+<br>
+These are not too important since you will be customizing them yourself when you have your own project.
 <br>
 
-Below them, you will find a ```demoReference``` variable is declared which stores the ```collection``` method's return value. We are passing the ```firestore``` database variable that we imported from ```firebase.js``` and the name of the collection we are going to reference.
+Below them, you will find a ```demoReference``` variable is declared which stores the ```collection``` method's return value. 
+<br>
+We are passing the ```firestore``` database variable that we imported from ```firebase.js``` and the name of the collection we are going to reference.
 
 <br>
 
@@ -173,18 +177,36 @@ Next, there is a ```useEffect()``` function that retrieves data from Firestore.
 
 <img src="./images/CRUD/6.png" alt="Icons representing CRUD features." width="700px"/>
 
-Note that we are putting an async function called ```fetchData``` within the ```useEffect()```. In the first line, this function activates a useState variable to display a loading message. Then an empty array called ```dataArr``` gets defined to store incoming data. Another variable called ```q``` is defined to store a simple query object with the ```demoReference``` we defined. The ```demoReference``` we created gets passed to the ```query``` method and we are also specifying which documents to retrieve. 
+Note that we are putting an async function called ```fetchData``` within the ```useEffect()```. 
+<br>
+In the first line, this function activates a useState variable to display a loading message. 
+<br>
+Then an empty array called ```dataArr``` gets defined to store incoming data. 
+<br>
+Another variable called ```q``` is defined to store a simple query object with the ```demoReference``` we defined. 
+<br>
+The ```demoReference``` we created gets passed to the ```query``` method and we are also specifying which documents to retrieve. 
 <br>
 
 In this tutorial's case, string interpolation is being incorporated to find documents where the userId matches the session user's unique ID.
 
 <br>
 
-The ```where``` method was imported at the top of the file and make sure that your syntax is correct. i.e. ```==``` instead of ```===```. Check for typos for the key you are looking for.
+The ```where``` method was imported at the top of the file and make sure that your syntax is correct. 
+<br>
+i.e. ```==``` instead of ```===```. Check for typos for the key you are looking for.
 
 <br>
 
-Next, all documents that match the ```q``` query object's criteria are retrieved with the ```getDocs()``` asynchronous method. The results are stored in a variable called ```querySnapshot```. We are going to loop through all documents and store necessary data in an object to push to the empty array we defined earlier. You can ```console.log()``` each document to see the underlying structure, but note that you need to invoke the ```.data()``` method to access the user generated message or other information depending on what your form and user input looks like.
+Next, all documents that match the ```q``` query object's criteria are retrieved with the ```getDocs()``` asynchronous method. 
+<br>
+The results are stored in a variable called ```querySnapshot```. 
+<br>
+We are going to loop through all documents and store necessary data in an object to push to the empty array we defined earlier. 
+<br>
+You can ```console.log()``` each document to see the underlying structure.
+<br>
+Note that you need to invoke the ```.data()``` method to access document data, in this case the user generated message.
 
 <br>
 
@@ -192,13 +214,54 @@ Outside of the ```fetchData``` function, we immediately invoke it and catch any 
 
 <br>
 
-Once the data gets retrieved, this component prop drills data to the ```<Read />``` component. This component maps through the ```retrievedData``` array and passes each document or ```event``` to a <DemoCard /> component. It's always important to note that when you loop through data to generate components, you need a unique ID as a ```key``` prop. Avoid incoporating temporary fixes like ```key=idx``` because ```idx``` will definitely cause issues down the road and your app will break. 
+Once the data gets retrieved, this component prop drills data to the ```<Read />``` component. 
+<br>
+This component maps through the ```retrievedData``` array and passes each document or ```event``` to a <DemoCard /> component. 
+<br>
+It's always important to note that when you loop through data to generate components, you need a unique ID as a ```key``` prop. 
+<br>
+Avoid incoporating temporary fixes like ```key=idx``` because ```idx``` will definitely cause issues down the road and your app will break. 
 
 ---
 
 <br>
 
 # 4: Update the post you created
+
+# 5: Delete your post
+The last step in this tutorial is deleting the post you created! 
+
+## Navigate to ```DemoCard.js``` in the ```Cards``` directory. 
+At the top of the file, you will see these imports:
+```
+import { firestore }from "../firebase";
+import { doc, deleteDoc } from "firebase/firestore";
+```
+
+These are the only Firebase and Firestore tools you need to delete documents!
+
+For this tutorial, the following ```onClick``` function passed to the ```<img>``` element with the trash icon handles deleting posts:
+```
+const handleDelete = async(e) => {
+    e.preventDefault();
+    await deleteDoc(doc(firestore, "demo_collection", `${event.id}`));
+    console.log("You successfully deleted a single document from Firestore.")
+    dataUpdated(e);
+}
+```
+<br>
+
+### As you can see, it's so simple!
+All you need to do is define an async function and await the ```deleteDoc``` method.
+- Inside ```deleteDoc``` invoke ```doc```
+- Pass the firestore database imported from firebase.js
+- Also pass the name of the collection and the specific file ID
+- The document ID is prop drilled in this case
+
+## Note that the security rules in Firestore that you defined earlier limit which docs you can delete
+Only documents with your userID can be deleted because you defined this rules in the Firestore console.
+# That's it folks you did it!
+
 
 
 # <i>Happy hacking! I hope this tutorial was helpful :)</i>

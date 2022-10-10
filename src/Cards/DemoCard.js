@@ -2,7 +2,7 @@
 import { useState } from "react";
 //Firebase/Firestore
 import { firestore }from "../firebase";
-import { doc, deleteDoc } from "firebase/firestore"
+import { doc, deleteDoc } from "firebase/firestore";
 //Components
 import Update from "../Update";
 //Styling
