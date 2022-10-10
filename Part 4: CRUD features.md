@@ -6,7 +6,10 @@
 <br>
 
 # 1: Setting up data validations (security rules)
-You definitely don't want to give everyone permission to perform CRUD operations. You want to check authentication status and credentials.
+You definitely don't want to give everyone permission to perform CRUD operations. 
+<br>
+
+You want to check authentication status and credentials.
 <br>
 
 Let's walk through setting up rules in the Firestore console.
@@ -20,12 +23,13 @@ Let's walk through setting up rules in the Firestore console.
 
 ## Click on ```Rules``` under the ```Cloud Firestore``` header
 The following page with your current rules will load:
+
 <img src="./images/CRUD/2.png" alt="Firestore rules and data validation page." width="700px"/>
 
 <br>
 
 ## [Here](https://cloud.google.com/firestore/docs/security/rules-conditions) is a link to the Firestore data validation doc
-It is really handy to split your window and follow the official doc side-by-side to check your syntax.
+It's really handy to split your window and follow the official doc side-by-side to check your syntax.
 
 <img src="./images/CRUD/3.png" alt="Screenshot of Firestore rules console on the left and the Firestore official docs for restrictions on new data on the right." width="700px"/>
 
@@ -208,19 +212,30 @@ You can ```console.log()``` each document to see the underlying structure.
 <br>
 Note that you need to invoke the ```.data()``` method to access document data, in this case the user generated message.
 
-<br>
-
 Outside of the ```fetchData``` function, we immediately invoke it and catch any errors.
 
+---
+
 <br>
 
-Once the data gets retrieved, this component prop drills data to the ```<Read />``` component. 
+### Once the data gets retrieved, this component prop drills data to the ```<Read />``` component. 
 <br>
+<img src="./images/CRUD/7.png" alt="Screenshot of the Read component that maps through data." width="700px"/>
+
+
 This component maps through the ```retrievedData``` array and passes each document or ```event``` to a <DemoCard /> component. 
 <br>
 It's always important to note that when you loop through data to generate components, you need a unique ID as a ```key``` prop. 
 <br>
-Avoid incoporating temporary fixes like ```key=idx``` because ```idx``` will definitely cause issues down the road and your app will break. 
+
+Avoid incoporating temporary fixes like:
+ ```
+ allData.forEach((data, idx) -> { 
+    <div key={idx} data={data} />
+}
+``` 
+
+because ```idx``` will definitely cause issues down the road and your app will break. 
 
 ---
 
