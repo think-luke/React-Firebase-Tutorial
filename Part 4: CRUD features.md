@@ -242,7 +242,94 @@ because ```idx``` will definitely cause issues down the road and your app will b
 <br>
 
 # 4: Update the post you created
+The update CRUD feature is very easy to execute. 
+<br>
+The overview is that you want to limit:
+- Editors to be only the owner of the post
+- Edits must not equal the original data
 
+## Navigate to ```index.js``` in the ```Update``` folder
+You will find these two lines of imports at the top of the file:
+```
+import { firestore } from "../firebase";
+import { doc, updateDoc } from "@firebase/firestore";
+```
+
+Make sure you have the correct path for the ```firestore``` import.
+
+Next, you will want to define ```useState``` variables to handle the new text you will replace the old message with.
+
+After that step, you will need to define a variable to store the return value of the ```doc()``` method.
+<br>
+
+Invoke ```doc()``` with the following data:
+- The ```firestore``` import
+- A string with ```"your_collection_name"``` 
+- A specific document ID to update
+
+### Once you have the above steps finished, you need to define an evenrt handler function for a button.
+<br>
+This is the function that is included in the ```Update``` component:
+
+```
+const handleUpdate = async(e) => {
+    e.preventDefault();
+    await updateDoc(eventRef, {
+        userId: sessionUser.id,
+        text: newText
+    });
+    dataUpdated(e);
+    handleEditModal(e);
+    console.log("You successfully edited a field in your Firestore document.")
+    return
+}
+```
+
+Feel free to adjust what you include in the ```updateDoc()``` method depending on your security rules.
+
+---
+
+<br>
+
+## For this tutorial, you will not be able to update a document unless you properly change the content of your message.
+
+Let's say you created a document with the message of ```Apple```:
+
+<img src="./images/CRUD/8.png" alt="Icons representing CRUD features." width="700px"/>
+
+<br>
+
+If you try to update this post with the same message, the following error will appear in the console:
+
+<img src="./images/CRUD/9.png" alt="Icons representing CRUD features." width="700px"/>
+
+You can easily catch this error and handle it in a separate function.
+
+---
+
+<br>
+
+Try updating the message with a completely new message.
+
+<img src="./images/CRUD/10.png" alt="Icons representing CRUD features." width="700px"/>
+
+<br>
+
+If you update the message properly, a success message will appear:
+
+<img src="./images/CRUD/11.png" alt="Icons representing CRUD features." width="700px"/>
+
+---
+
+<br>
+
+## That's it for updating your message!
+Make sure to reference this screenshot if you are stuck:
+
+<img src="./images/CRUD/12.png" alt="Icons representing CRUD features." width="700px"/>
+
+---
+<br>
 
 # 5: Delete your post
 The last step in this tutorial is deleting the post you created! 
@@ -282,6 +369,12 @@ All you need to do is define an async function and await the ```deleteDoc``` met
 
 ## Note that the security rules in Firestore that you defined earlier limit which docs you can delete
 Only documents with your userID can be deleted because you defined this rules in the Firestore console.
+
+Check this screenshot if something isn't working:
+
+<img src="./images/CRUD/13.png" alt="Icons representing CRUD features." width="700px"/>
+
+---
 
 <br>
 
